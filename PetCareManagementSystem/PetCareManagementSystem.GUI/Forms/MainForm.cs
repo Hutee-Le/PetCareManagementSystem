@@ -54,10 +54,20 @@ namespace PetCareManagementSystem.GUI
 
             if (result == DialogResult.Yes)
             {
-                this.Hide();
+                CloseAllChildForms();
 
                 LoginForm loginForm = new LoginForm();
-                loginForm.ShowLoginForm();
+                loginForm.Show();
+
+                this.Close();
+            }
+        }
+
+        private void CloseAllChildForms()
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
             }
         }
 
