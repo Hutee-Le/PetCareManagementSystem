@@ -14,52 +14,60 @@ namespace PetCareManagementSystem.GUI
 {
     public partial class LoginForm : Form
     {
+        #region Fields
+
         private EmployeeBUS employeeBUS;
+
+        #endregion
+
+        #region Constructors
+
         public LoginForm()
         {
             InitializeComponent();
             employeeBUS = new EmployeeBUS();
         }
 
+        #endregion
+
+        #region Event Handlers
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
-
-            bool isAuthenticated = employeeBUS.AuthenticateUser(email, password);
-            if (isAuthenticated)
+            try
             {
-                Employees loggedInUser = employeeBUS.GetEmployeeByEmail(email);
-                if (loggedInUser != null)
-                {
-                    if (!toggleRemember.Checked)
-                    {
-                        txtEmail.Text = string.Empty;
-                        txtPassword.Text = string.Empty;
-                    }
-                    // Ẩn form đăng nhập
-                    this.Hide();
+                string email = txtEmail.Text;
+                string password = txtPassword.Text;
 
-                    MainForm mainForm = new MainForm(loggedInUser);
-                    mainForm.Show();
+                bool isAuthenticated = employeeBUS.AuthenticateUser(email, password);
+                if (isAuthenticated)
+                {
+                    Employees loggedInUser = employeeBUS.GetEmployeeByEmail(email);
+                    if (loggedInUser != null)
+                    {
+                        if (!toggleRemember.Checked)
+                        {
+                            txtEmail.Text = string.Empty;
+                            txtPassword.Text = string.Empty;
+                        }
+                        this.Hide();
+
+                        MainForm mainForm = new MainForm(loggedInUser);
+                        mainForm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    // Trường hợp không tìm thấy người dùng
-                    MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid email or password. Please try again.", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                // Authentication failed, show error message
-                MessageBox.Show("Invalid email or password. Please try again.", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        public void ShowLoginForm()
-        {
-            // Hiển thị lại LoginForm
-            this.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -71,5 +79,7 @@ namespace PetCareManagementSystem.GUI
                 Application.Exit();
             }
         }
+
+        #endregion
     }
 }
