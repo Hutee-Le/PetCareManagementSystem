@@ -1,0 +1,30 @@
+# Ignore Visual Studio folders
+.vs
+# Ignore all bin and obj folders
+**/bin/
+**/obj/
+
+# Ignore packages folder
+packages/
+
+# Ignore all .suo, .user, .userosscache, .sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore NuGet Packages
+*.nupkg
+
+# Ignore the local SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
+# Ignore the build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]nyCPU/
+[Bb]uild/
