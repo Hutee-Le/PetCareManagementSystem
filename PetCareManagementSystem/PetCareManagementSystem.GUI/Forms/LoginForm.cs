@@ -51,7 +51,7 @@ namespace PetCareManagementSystem.GUI
                         }
                         this.Hide();
 
-                        MainForm mainForm = new MainForm(loggedInUser);
+                        MainForm mainForm = new MainForm(loggedInUser,this);
                         mainForm.Show();
                     }
                     else
