@@ -30,65 +30,53 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.HeaderRightPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.MinimizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.MaximizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.TitleHeaderName = new System.Windows.Forms.Label();
             this.menuButton = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.DashboardPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
-            this.sidebarContainer = new Guna.UI2.WinForms.Guna2Panel();
-            this.GroomingContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.GroomingPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnArrowDown = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnSpaTypes = new Guna.UI2.WinForms.Guna2Button();
             this.btnSpaCategory = new Guna.UI2.WinForms.Guna2Button();
             this.btnSpaEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.btnSpaOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnGrooming = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.BookingServicePanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnBookingService = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.UserStatusPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnUserName = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LogoutPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.sidebarTime = new System.Windows.Forms.Timer(this.components);
+            this.SidebarTime = new System.Windows.Forms.Timer(this.components);
             this.GroomingTimer = new System.Windows.Forms.Timer(this.components);
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
+            this.ToolbarPanel = new System.Windows.Forms.Panel();
+            this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.HeaderRightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
-            this.guna2Panel3.SuspendLayout();
-            this.sidebarContainer.SuspendLayout();
-            this.GroomingContainer.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            this.guna2Panel6.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
+            this.DashboardPanel.SuspendLayout();
+            this.GroomingPanel.SuspendLayout();
+            this.BookingServicePanel.SuspendLayout();
+            this.UserStatusPanel.SuspendLayout();
+            this.LogoutPanel.SuspendLayout();
+            this.ToolbarPanel.SuspendLayout();
+            this.SideMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // HeaderRightPanel
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.menuButton);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1203, 40);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Controls.Add(this.btnClose);
-            this.guna2Panel2.Controls.Add(this.guna2ControlBox3);
-            this.guna2Panel2.Controls.Add(this.guna2ControlBox2);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel2.Location = new System.Drawing.Point(1068, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(135, 40);
-            this.guna2Panel2.TabIndex = 4;
+            this.HeaderRightPanel.BackColor = System.Drawing.Color.Transparent;
+            this.HeaderRightPanel.Controls.Add(this.btnClose);
+            this.HeaderRightPanel.Controls.Add(this.MinimizeBox);
+            this.HeaderRightPanel.Controls.Add(this.MaximizeBox);
+            this.HeaderRightPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.HeaderRightPanel.Location = new System.Drawing.Point(1068, 0);
+            this.HeaderRightPanel.Name = "HeaderRightPanel";
+            this.HeaderRightPanel.Size = new System.Drawing.Size(135, 40);
+            this.HeaderRightPanel.TabIndex = 4;
             // 
             // btnClose
             // 
@@ -106,41 +94,41 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // guna2ControlBox3
+            // MinimizeBox
             // 
-            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox3.Animated = true;
-            this.guna2ControlBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox3.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.guna2ControlBox3.Location = new System.Drawing.Point(0, 0);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 40);
-            this.guna2ControlBox3.TabIndex = 3;
+            this.MinimizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MinimizeBox.Animated = true;
+            this.MinimizeBox.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.MinimizeBox.FillColor = System.Drawing.Color.White;
+            this.MinimizeBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.MinimizeBox.Location = new System.Drawing.Point(0, 0);
+            this.MinimizeBox.Name = "MinimizeBox";
+            this.MinimizeBox.Size = new System.Drawing.Size(45, 40);
+            this.MinimizeBox.TabIndex = 3;
             // 
-            // guna2ControlBox2
+            // MaximizeBox
             // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.Animated = true;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.guna2ControlBox2.Location = new System.Drawing.Point(45, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 40);
-            this.guna2ControlBox2.TabIndex = 2;
+            this.MaximizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaximizeBox.Animated = true;
+            this.MaximizeBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.MaximizeBox.FillColor = System.Drawing.Color.White;
+            this.MaximizeBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.MaximizeBox.Location = new System.Drawing.Point(45, 0);
+            this.MaximizeBox.Name = "MaximizeBox";
+            this.MaximizeBox.Size = new System.Drawing.Size(45, 40);
+            this.MaximizeBox.TabIndex = 2;
             // 
-            // label1
+            // TitleHeaderName
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pet Care System";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TitleHeaderName.BackColor = System.Drawing.Color.Transparent;
+            this.TitleHeaderName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleHeaderName.Location = new System.Drawing.Point(41, 0);
+            this.TitleHeaderName.Name = "TitleHeaderName";
+            this.TitleHeaderName.Size = new System.Drawing.Size(163, 40);
+            this.TitleHeaderName.TabIndex = 1;
+            this.TitleHeaderName.Text = "Pet Care System";
+            this.TitleHeaderName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuButton
             // 
@@ -148,7 +136,7 @@
             this.menuButton.FillColor = System.Drawing.Color.Transparent;
             this.menuButton.Image = global::PetCareManagementSystem.GUI.Properties.Resources.icon_menu;
             this.menuButton.ImageRotate = 0F;
-            this.menuButton.Location = new System.Drawing.Point(12, 12);
+            this.menuButton.Location = new System.Drawing.Point(15, 10);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(20, 20);
             this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,14 +144,14 @@
             this.menuButton.TabStop = false;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
-            // guna2Panel3
+            // DashboardPanel
             // 
-            this.guna2Panel3.Controls.Add(this.btnDashBoard);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(286, 55);
-            this.guna2Panel3.TabIndex = 3;
+            this.DashboardPanel.Controls.Add(this.btnDashBoard);
+            this.DashboardPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DashboardPanel.Location = new System.Drawing.Point(0, 0);
+            this.DashboardPanel.Name = "DashboardPanel";
+            this.DashboardPanel.Size = new System.Drawing.Size(286, 55);
+            this.DashboardPanel.TabIndex = 3;
             // 
             // btnDashBoard
             // 
@@ -195,38 +183,21 @@
             this.btnDashBoard.Text = "Bảng Điều Khiển";
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
-            // sidebarContainer
+            // GroomingPanel
             // 
-            this.sidebarContainer.BackColor = System.Drawing.Color.White;
-            this.sidebarContainer.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.sidebarContainer.Controls.Add(this.GroomingContainer);
-            this.sidebarContainer.Controls.Add(this.guna2Panel4);
-            this.sidebarContainer.Controls.Add(this.guna2Panel6);
-            this.sidebarContainer.Controls.Add(this.guna2Panel5);
-            this.sidebarContainer.Controls.Add(this.guna2Panel3);
-            this.sidebarContainer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebarContainer.Location = new System.Drawing.Point(0, 40);
-            this.sidebarContainer.MaximumSize = new System.Drawing.Size(286, 0);
-            this.sidebarContainer.MinimumSize = new System.Drawing.Size(71, 0);
-            this.sidebarContainer.Name = "sidebarContainer";
-            this.sidebarContainer.Size = new System.Drawing.Size(286, 613);
-            this.sidebarContainer.TabIndex = 2;
-            // 
-            // GroomingContainer
-            // 
-            this.GroomingContainer.Controls.Add(this.btnArrowDown);
-            this.GroomingContainer.Controls.Add(this.btnSpaTypes);
-            this.GroomingContainer.Controls.Add(this.btnSpaCategory);
-            this.GroomingContainer.Controls.Add(this.btnSpaEmployee);
-            this.GroomingContainer.Controls.Add(this.btnSpaOrder);
-            this.GroomingContainer.Controls.Add(this.btnGrooming);
-            this.GroomingContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroomingContainer.Location = new System.Drawing.Point(0, 110);
-            this.GroomingContainer.MaximumSize = new System.Drawing.Size(286, 275);
-            this.GroomingContainer.MinimumSize = new System.Drawing.Size(286, 55);
-            this.GroomingContainer.Name = "GroomingContainer";
-            this.GroomingContainer.Size = new System.Drawing.Size(286, 55);
-            this.GroomingContainer.TabIndex = 6;
+            this.GroomingPanel.Controls.Add(this.btnArrowDown);
+            this.GroomingPanel.Controls.Add(this.btnSpaTypes);
+            this.GroomingPanel.Controls.Add(this.btnSpaCategory);
+            this.GroomingPanel.Controls.Add(this.btnSpaEmployee);
+            this.GroomingPanel.Controls.Add(this.btnSpaOrder);
+            this.GroomingPanel.Controls.Add(this.btnGrooming);
+            this.GroomingPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroomingPanel.Location = new System.Drawing.Point(0, 110);
+            this.GroomingPanel.MaximumSize = new System.Drawing.Size(286, 275);
+            this.GroomingPanel.MinimumSize = new System.Drawing.Size(286, 55);
+            this.GroomingPanel.Name = "GroomingPanel";
+            this.GroomingPanel.Size = new System.Drawing.Size(286, 55);
+            this.GroomingPanel.TabIndex = 6;
             // 
             // btnArrowDown
             // 
@@ -392,14 +363,14 @@
             this.btnGrooming.MouseLeave += new System.EventHandler(this.btnGrooming_MouseLeave);
             this.btnGrooming.MouseHover += new System.EventHandler(this.btnGrooming_MouseHover);
             // 
-            // guna2Panel4
+            // BookingServicePanel
             // 
-            this.guna2Panel4.Controls.Add(this.btnBookingService);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 55);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(286, 55);
-            this.guna2Panel4.TabIndex = 5;
+            this.BookingServicePanel.Controls.Add(this.btnBookingService);
+            this.BookingServicePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BookingServicePanel.Location = new System.Drawing.Point(0, 55);
+            this.BookingServicePanel.Name = "BookingServicePanel";
+            this.BookingServicePanel.Size = new System.Drawing.Size(286, 55);
+            this.BookingServicePanel.TabIndex = 5;
             // 
             // btnBookingService
             // 
@@ -430,14 +401,14 @@
             this.btnBookingService.Text = "Đơn Đặt Dịch Vụ";
             this.btnBookingService.Click += new System.EventHandler(this.btnBookingService_Click);
             // 
-            // guna2Panel6
+            // UserStatusPanel
             // 
-            this.guna2Panel6.Controls.Add(this.btnUserName);
-            this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel6.Location = new System.Drawing.Point(0, 503);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(286, 55);
-            this.guna2Panel6.TabIndex = 4;
+            this.UserStatusPanel.Controls.Add(this.btnUserName);
+            this.UserStatusPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.UserStatusPanel.Location = new System.Drawing.Point(0, 503);
+            this.UserStatusPanel.Name = "UserStatusPanel";
+            this.UserStatusPanel.Size = new System.Drawing.Size(286, 55);
+            this.UserStatusPanel.TabIndex = 4;
             // 
             // btnUserName
             // 
@@ -467,14 +438,14 @@
             this.btnUserName.TabIndex = 2;
             this.btnUserName.Text = "Demo Amin";
             // 
-            // guna2Panel5
+            // LogoutPanel
             // 
-            this.guna2Panel5.Controls.Add(this.btnLogout);
-            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel5.Location = new System.Drawing.Point(0, 558);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(286, 55);
-            this.guna2Panel5.TabIndex = 4;
+            this.LogoutPanel.Controls.Add(this.btnLogout);
+            this.LogoutPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LogoutPanel.Location = new System.Drawing.Point(0, 558);
+            this.LogoutPanel.Name = "LogoutPanel";
+            this.LogoutPanel.Size = new System.Drawing.Size(286, 55);
+            this.LogoutPanel.TabIndex = 4;
             // 
             // btnLogout
             // 
@@ -505,15 +476,43 @@
             this.btnLogout.Text = "Đăng Xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // sidebarTime
+            // SidebarTime
             // 
-            this.sidebarTime.Interval = 10;
-            this.sidebarTime.Tick += new System.EventHandler(this.sidebarTime_Tick);
+            this.SidebarTime.Interval = 10;
+            this.SidebarTime.Tick += new System.EventHandler(this.SidebarTime_Tick);
             // 
             // GroomingTimer
             // 
             this.GroomingTimer.Interval = 10;
             this.GroomingTimer.Tick += new System.EventHandler(this.GroomingTimer_Tick);
+            // 
+            // ToolbarPanel
+            // 
+            this.ToolbarPanel.BackColor = System.Drawing.Color.White;
+            this.ToolbarPanel.Controls.Add(this.HeaderRightPanel);
+            this.ToolbarPanel.Controls.Add(this.menuButton);
+            this.ToolbarPanel.Controls.Add(this.TitleHeaderName);
+            this.ToolbarPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ToolbarPanel.Location = new System.Drawing.Point(0, 0);
+            this.ToolbarPanel.Name = "ToolbarPanel";
+            this.ToolbarPanel.Size = new System.Drawing.Size(1203, 40);
+            this.ToolbarPanel.TabIndex = 4;
+            // 
+            // SideMenuPanel
+            // 
+            this.SideMenuPanel.BackColor = System.Drawing.Color.White;
+            this.SideMenuPanel.Controls.Add(this.GroomingPanel);
+            this.SideMenuPanel.Controls.Add(this.UserStatusPanel);
+            this.SideMenuPanel.Controls.Add(this.LogoutPanel);
+            this.SideMenuPanel.Controls.Add(this.BookingServicePanel);
+            this.SideMenuPanel.Controls.Add(this.DashboardPanel);
+            this.SideMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideMenuPanel.Location = new System.Drawing.Point(0, 40);
+            this.SideMenuPanel.MaximumSize = new System.Drawing.Size(286, 0);
+            this.SideMenuPanel.MinimumSize = new System.Drawing.Size(71, 0);
+            this.SideMenuPanel.Name = "SideMenuPanel";
+            this.SideMenuPanel.Size = new System.Drawing.Size(286, 613);
+            this.SideMenuPanel.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -521,47 +520,44 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1203, 653);
-            this.Controls.Add(this.sidebarContainer);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.SideMenuPanel);
+            this.Controls.Add(this.ToolbarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
+            this.HeaderRightPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
-            this.guna2Panel3.ResumeLayout(false);
-            this.sidebarContainer.ResumeLayout(false);
-            this.GroomingContainer.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel6.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
+            this.DashboardPanel.ResumeLayout(false);
+            this.GroomingPanel.ResumeLayout(false);
+            this.BookingServicePanel.ResumeLayout(false);
+            this.UserStatusPanel.ResumeLayout(false);
+            this.LogoutPanel.ResumeLayout(false);
+            this.ToolbarPanel.ResumeLayout(false);
+            this.SideMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox menuButton;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.Label TitleHeaderName;
+        private Guna.UI2.WinForms.Guna2ControlBox MaximizeBox;
+        private Guna.UI2.WinForms.Guna2ControlBox MinimizeBox;
+        private Guna.UI2.WinForms.Guna2Panel HeaderRightPanel;
         private Guna.UI2.WinForms.Guna2Button btnDashBoard;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Panel sidebarContainer;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel DashboardPanel;
+        private Guna.UI2.WinForms.Guna2Panel LogoutPanel;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2Panel UserStatusPanel;
         private Guna.UI2.WinForms.Guna2Button btnUserName;
         private Guna.UI2.WinForms.Guna2Button btnClose;
-        private System.Windows.Forms.Timer sidebarTime;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Timer SidebarTime;
+        private Guna.UI2.WinForms.Guna2Panel BookingServicePanel;
         private Guna.UI2.WinForms.Guna2Button btnBookingService;
-        private Guna.UI2.WinForms.Guna2Panel GroomingContainer;
+        private Guna.UI2.WinForms.Guna2Panel GroomingPanel;
         private Guna.UI2.WinForms.Guna2Button btnSpaOrder;
         private Guna.UI2.WinForms.Guna2Button btnGrooming;
         private Guna.UI2.WinForms.Guna2Button btnSpaTypes;
@@ -569,5 +565,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSpaEmployee;
         private System.Windows.Forms.Timer GroomingTimer;
         private Guna.UI2.WinForms.Guna2ImageButton btnArrowDown;
+        private System.Windows.Forms.Panel ToolbarPanel;
+        private System.Windows.Forms.Panel SideMenuPanel;
     }
 }

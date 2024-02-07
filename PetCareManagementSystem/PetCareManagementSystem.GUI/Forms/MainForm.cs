@@ -17,6 +17,7 @@ namespace PetCareManagementSystem.GUI
     {
         #region Fields
 
+        private LoginForm _loginForm;
         private EmployeeBUS employeeBUS;
         private Employees _employees;
         private bool sidebarExpanded;
@@ -29,10 +30,11 @@ namespace PetCareManagementSystem.GUI
 
         #region Constructor and Load
 
-        public MainForm(Employees employees)
+        public MainForm(Employees employees, LoginForm loginForm)
         {
             InitializeComponent();
             _employees = employees;
+            _loginForm = loginForm;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -56,10 +58,8 @@ namespace PetCareManagementSystem.GUI
             {
                 CloseAllChildForms();
 
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-
                 this.Close();
+                _loginForm.Show();
             }
         }
 
@@ -83,7 +83,7 @@ namespace PetCareManagementSystem.GUI
 
         #region Sidebar
 
-        private void sidebarTime_Tick(object sender, EventArgs e)
+        private void SidebarTime_Tick(object sender, EventArgs e)
         {
             AdjustSidebarWidth();
         }
@@ -102,8 +102,8 @@ namespace PetCareManagementSystem.GUI
 
         private void ExpandSidebar()
         {
-            sidebarContainer.Width += 10;
-            if (sidebarContainer.Width == sidebarContainer.MaximumSize.Width)
+            SideMenuPanel.Width += 10;
+            if (SideMenuPanel.Width == SideMenuPanel.MaximumSize.Width)
             {
                 sidebarExpanded = false;
                 StopSidebarTimer();
@@ -113,8 +113,8 @@ namespace PetCareManagementSystem.GUI
 
         private void CollapseSidebar()
         {
-            sidebarContainer.Width -= 10;
-            if (sidebarContainer.Width == sidebarContainer.MinimumSize.Width)
+            SideMenuPanel.Width -= 10;
+            if (SideMenuPanel.Width == SideMenuPanel.MinimumSize.Width)
             {
                 sidebarExpanded = true;
                 StopSidebarTimer();
@@ -124,12 +124,12 @@ namespace PetCareManagementSystem.GUI
 
         private void StopSidebarTimer()
         {
-            sidebarTime.Stop();
+            SidebarTime.Stop();
         }
 
         private void ResetButtonImageOffset()
         {
-            int offsetValue = sidebarExpanded ? 25 : 10;
+            int offsetValue = sidebarExpanded ? 10 : 25;
             btnSpaTypes.ImageOffset = new System.Drawing.Point(offsetValue, 0);
             btnSpaCategory.ImageOffset = new System.Drawing.Point(offsetValue, 0);
             btnSpaEmployee.ImageOffset = new System.Drawing.Point(offsetValue, 0);
@@ -138,7 +138,7 @@ namespace PetCareManagementSystem.GUI
 
         private void menuButton_Click(object sender, EventArgs e)
         {
-            sidebarTime.Start();
+            SidebarTime.Start();
         }
 
         #endregion
@@ -154,8 +154,8 @@ namespace PetCareManagementSystem.GUI
         {
             if (groomingCollapsed)
             {
-                GroomingContainer.Height -= 10;
-                if (GroomingContainer.Height == GroomingContainer.MinimumSize.Height)
+                GroomingPanel.Height -= 10;
+                if (GroomingPanel.Height == GroomingPanel.MinimumSize.Height)
                 {
                     groomingCollapsed = false;
                     GroomingTimer.Stop();
@@ -163,8 +163,8 @@ namespace PetCareManagementSystem.GUI
             }
             else
             {
-                GroomingContainer.Height += 10;
-                if (GroomingContainer.Height == GroomingContainer.MaximumSize.Height)
+                GroomingPanel.Height += 10;
+                if (GroomingPanel.Height == GroomingPanel.MaximumSize.Height)
                 {
                     groomingCollapsed = true;
                     GroomingTimer.Stop();
