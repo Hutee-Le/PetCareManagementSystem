@@ -1,5 +1,6 @@
 ﻿using PetCareManagementSystem.BLL;
 using PetCareManagementSystem.DTO.Models;
+using PetCareManagementSystem.GUI.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,8 @@ namespace PetCareManagementSystem.GUI
                             txtPassword.Text = string.Empty;
                         }
                         this.Hide();
+                        SplashScreenForm splashScreenForm = new SplashScreenForm();
+                        splashScreenForm.ShowDialog();
 
                         MainForm mainForm = new MainForm(loggedInUser,this);
                         mainForm.Show();
