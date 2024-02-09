@@ -333,9 +333,9 @@ namespace PetCareManagementSystem.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap plash_creen {
+        internal static System.Drawing.Bitmap plash_screen {
             get {
-                object obj = ResourceManager.GetObject("plash-creen", resourceCulture);
+                object obj = ResourceManager.GetObject("plash_screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

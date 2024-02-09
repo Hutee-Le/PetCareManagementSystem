@@ -268,7 +268,7 @@
     <None Include="Resources\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plash-creen.jpg" />
+    <None Include="Resources\plash_screen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
