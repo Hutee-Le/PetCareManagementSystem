@@ -51,8 +51,6 @@ namespace PetCareManagementSystem.GUI
                             txtPassword.Text = string.Empty;
                         }
                         this.Hide();
-                        SplashScreenForm splashScreenForm = new SplashScreenForm();
-                        splashScreenForm.ShowDialog();
 
                         MainForm mainForm = new MainForm(loggedInUser,this);
                         mainForm.Show();

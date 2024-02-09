@@ -26,8 +26,14 @@ namespace PetCareManagementSystem.GUI.Forms
                 timerSplashScreen.Stop();
                 this.Hide();
                 LoginForm loginForm = new LoginForm();
+                loginForm.FormClosed += LoginForm_FormClosed;
                 loginForm.Show();
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }
