@@ -28,47 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2.SuspendLayout();
+            this.DashboardPanel = new System.Windows.Forms.Panel();
+            this.DashboardTabPanel = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
+            this.DashboardPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel2
+            // DashboardPanel
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.guna2Panel2.Controls.Add(this.guna2Panel1);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1095, 450);
-            this.guna2Panel2.TabIndex = 1;
+            this.DashboardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.DashboardPanel.Controls.Add(this.DashboardTabPanel);
+            this.DashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DashboardPanel.Location = new System.Drawing.Point(0, 0);
+            this.DashboardPanel.Name = "DashboardPanel";
+            this.DashboardPanel.Size = new System.Drawing.Size(1095, 450);
+            this.DashboardPanel.TabIndex = 0;
             // 
-            // guna2Panel1
+            // DashboardTabPanel
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DashboardTabPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(26, 26);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1042, 59);
-            this.guna2Panel1.TabIndex = 1;
+            this.DashboardTabPanel.BackColor = System.Drawing.Color.White;
+            this.DashboardTabPanel.Location = new System.Drawing.Point(12, 25);
+            this.DashboardTabPanel.Name = "DashboardTabPanel";
+            this.DashboardTabPanel.Radius = 5;
+            this.DashboardTabPanel.Size = new System.Drawing.Size(1071, 47);
+            this.DashboardTabPanel.TabIndex = 1;
             // 
-            // DashboardForm1
+            // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 450);
-            this.Controls.Add(this.guna2Panel2);
-            this.Name = "DashboardForm1";
-            this.Text = "DashboardForm1";
-            this.guna2Panel2.ResumeLayout(false);
+            this.Controls.Add(this.DashboardPanel);
+            this.Name = "DashboardForm";
+            this.Text = "DashboardForm";
+            this.DashboardPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Panel DashboardPanel;
+        private CustomControls.RoundedPanel DashboardTabPanel;
     }
 }
