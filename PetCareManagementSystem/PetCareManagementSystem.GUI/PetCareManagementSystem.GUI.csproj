@@ -81,6 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\BookingManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
