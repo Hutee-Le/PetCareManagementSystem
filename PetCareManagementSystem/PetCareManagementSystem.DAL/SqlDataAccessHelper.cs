@@ -125,6 +125,33 @@ namespace PetCareManagementSystem.DAL
             }
             return true;
         }
+        public int ExecuteInsertQuery1(String _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            int rowsAffected = 0;
+
+            try
+            {
+                myCommand.Connection = OpenConnection();
+                myCommand.CommandText = _query;
+                myCommand.Parameters.AddRange(sqlParameter);
+                rowsAffected = myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeInsertQuery - Query: " + _query + " \nException: \n" + e.StackTrace.ToString());
+                // Trả về -1 hoặc một giá trị đặc biệt để biểu thị lỗi
+                return -1;
+            }
+            finally
+            {
+                // Đóng kết nối hoặc thực hiện các công việc dọn dẹp khác nếu cần
+                //  myCommand.Connection.Close();
+            }
+
+            return rowsAffected; // Trả về số hàng bị ảnh hưởng
+        }
+
 
         /// <method>
         /// Update Query
@@ -154,7 +181,7 @@ namespace PetCareManagementSystem.DAL
         /// <method>
         /// Delete Query
         /// </method>
-        public bool ExecuteDeleteQuery(String _query, SqlParameter sqlParameter)
+        public bool ExecuteDeleteQuery(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
             try
@@ -179,7 +206,7 @@ namespace PetCareManagementSystem.DAL
                 }
             }
             return true;
-         
+
         }
     }
 }
