@@ -18,6 +18,8 @@ namespace PetCareManagementSystem.DTO.Models
 
         public decimal UnitPrice { get; set; }
 
+        public decimal TotalPricePro { get; set; }
+
         public int SupplierId { get; set; }
 
         public virtual Product Product { get; set; } 

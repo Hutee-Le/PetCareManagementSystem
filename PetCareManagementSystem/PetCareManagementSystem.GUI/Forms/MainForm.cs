@@ -25,7 +25,8 @@ namespace PetCareManagementSystem.GUI
         private DashboardForm dashboardForm;
         private SpaBookingForm spaBookingForm;
         private BookingManagementForm bookingManagementForm;
-
+        private ManageReceiptForm receiptForm;
+        private AddProForm addProForm;
         #endregion
 
         #region Constructor and Load
@@ -268,6 +269,97 @@ namespace PetCareManagementSystem.GUI
         private void LoadDashboardForm()
         {
             OpenDashboardForm();
+        }
+
+        private void BtnManageReceipt_Click(object sender, EventArgs e)
+        {
+            timerbtnRec.Start();
+        }
+
+        private void timerbtnRec_Tick(object sender, EventArgs e)
+        {
+            AdjustGroomingContainerHeight1();
+        }
+        private void AdjustGroomingContainerHeight1()
+        {
+            if (groomingCollapsed)
+            {
+                guna2Panel1.Height -= 10;
+                if (guna2Panel1.Height == guna2Panel1.MinimumSize.Height)
+                {
+                    groomingCollapsed = false;
+                    timerbtnRec.Stop();
+                }
+            }
+            else
+            {
+                guna2Panel1.Height += 10;
+                if (guna2Panel1.Height == guna2Panel1.MaximumSize.Height)
+                {
+                    groomingCollapsed = true;
+                    timerbtnRec.Stop();
+                }
+            }
+        }
+
+       
+        private void ManageReceipt_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            receiptForm = null;
+        }
+        private void AddPro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            addProForm = null;
+        }
+        private void ManagePro_Click(object sender, EventArgs e)
+        {
+            if (addProForm == null)
+            {
+                addProForm = new AddProForm();
+                addProForm.FormClosed += AddPro_FormClosed;
+                addProForm.MdiParent = this;
+                addProForm.FormBorderStyle = FormBorderStyle.None;
+                addProForm.Dock = DockStyle.Fill;
+                addProForm.Show();
+            }
+            else
+            {
+                addProForm.Activate();
+            }
+        }
+
+        private void btnGrooming_Click_1(object sender, EventArgs e)
+        {
+            GroomingTimer.Start();
+        }
+
+        private void BtnManRec_Click_1(object sender, EventArgs e)
+        {
+            if (receiptForm == null)
+            {
+                receiptForm = new ManageReceiptForm();
+                receiptForm.FormClosed += ManageReceipt_FormClosed;
+                receiptForm.MdiParent = this;
+                receiptForm.FormBorderStyle = FormBorderStyle.None;
+                receiptForm.Dock = DockStyle.Fill;
+                receiptForm.Show();
+            }
+            else
+            {
+                receiptForm.Activate();
+            }
+        }
+
+        private void guna2Panel1_MouseHover(object sender, EventArgs e)
+        {
+
+            btnArD.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow;
+
+        }
+
+        private void guna2Panel1_MouseLeave(object sender, EventArgs e)
+        {
+            btnArD.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow;
         }
     }
 }

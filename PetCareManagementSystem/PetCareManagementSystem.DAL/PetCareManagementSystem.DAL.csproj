@@ -45,7 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CateProDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\ReceiptDAO.cs" />
+    <Compile Include="DAO\ReceiptDetailDAO.cs" />
+    <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="SqlDataAccessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -35,16 +35,8 @@
             this.MinimizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.MaximizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.TitleHeaderName = new System.Windows.Forms.Label();
-            this.menuButton = new Guna.UI2.WinForms.Guna2PictureBox();
             this.DashboardPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
-            this.GroomingPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnArrowDown = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnSpaTypes = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSpaCategory = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSpaEmployee = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSpaOrder = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGrooming = new Guna.UI2.WinForms.Guna2Button();
             this.BookingServicePanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnBookingService = new Guna.UI2.WinForms.Guna2Button();
             this.UserStatusPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -54,16 +46,31 @@
             this.SidebarTime = new System.Windows.Forms.Timer(this.components);
             this.GroomingTimer = new System.Windows.Forms.Timer(this.components);
             this.ToolbarPanel = new System.Windows.Forms.Panel();
+            this.menuButton = new Guna.UI2.WinForms.Guna2PictureBox();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
+            this.GroomingPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnArrowDown = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnSpaTypes = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSpaCategory = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSpaEmployee = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSpaOrder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGrooming = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnArD = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.BtnManageReceipt = new Guna.UI2.WinForms.Guna2Button();
+            this.ManagePro = new Guna.UI2.WinForms.Guna2Button();
+            this.timerbtnRec = new System.Windows.Forms.Timer(this.components);
+            this.BtnManRec = new Guna.UI2.WinForms.Guna2Button();
             this.HeaderRightPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.DashboardPanel.SuspendLayout();
-            this.GroomingPanel.SuspendLayout();
             this.BookingServicePanel.SuspendLayout();
             this.UserStatusPanel.SuspendLayout();
             this.LogoutPanel.SuspendLayout();
             this.ToolbarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.SideMenuPanel.SuspendLayout();
+            this.GroomingPanel.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderRightPanel
@@ -130,20 +137,6 @@
             this.TitleHeaderName.Text = "Pet Care System";
             this.TitleHeaderName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuButton
-            // 
-            this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuButton.FillColor = System.Drawing.Color.Transparent;
-            this.menuButton.Image = global::PetCareManagementSystem.GUI.Properties.Resources.icon_menu;
-            this.menuButton.ImageRotate = 0F;
-            this.menuButton.Location = new System.Drawing.Point(15, 10);
-            this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(20, 20);
-            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.menuButton.TabIndex = 1;
-            this.menuButton.TabStop = false;
-            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
-            // 
             // DashboardPanel
             // 
             this.DashboardPanel.Controls.Add(this.btnDashBoard);
@@ -182,186 +175,6 @@
             this.btnDashBoard.TabIndex = 2;
             this.btnDashBoard.Text = "Bảng Điều Khiển";
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
-            // 
-            // GroomingPanel
-            // 
-            this.GroomingPanel.Controls.Add(this.btnArrowDown);
-            this.GroomingPanel.Controls.Add(this.btnSpaTypes);
-            this.GroomingPanel.Controls.Add(this.btnSpaCategory);
-            this.GroomingPanel.Controls.Add(this.btnSpaEmployee);
-            this.GroomingPanel.Controls.Add(this.btnSpaOrder);
-            this.GroomingPanel.Controls.Add(this.btnGrooming);
-            this.GroomingPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroomingPanel.Location = new System.Drawing.Point(0, 110);
-            this.GroomingPanel.MaximumSize = new System.Drawing.Size(286, 275);
-            this.GroomingPanel.MinimumSize = new System.Drawing.Size(286, 55);
-            this.GroomingPanel.Name = "GroomingPanel";
-            this.GroomingPanel.Size = new System.Drawing.Size(286, 55);
-            this.GroomingPanel.TabIndex = 6;
-            // 
-            // btnArrowDown
-            // 
-            this.btnArrowDown.BackColor = System.Drawing.Color.White;
-            this.btnArrowDown.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnArrowDown.HoverState.ImageSize = new System.Drawing.Size(25, 20);
-            this.btnArrowDown.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow_down;
-            this.btnArrowDown.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnArrowDown.ImageRotate = 0F;
-            this.btnArrowDown.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnArrowDown.Location = new System.Drawing.Point(237, 18);
-            this.btnArrowDown.Name = "btnArrowDown";
-            this.btnArrowDown.Size = new System.Drawing.Size(25, 20);
-            this.btnArrowDown.TabIndex = 3;
-            // 
-            // btnSpaTypes
-            // 
-            this.btnSpaTypes.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaTypes.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaTypes.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSpaTypes.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
-            this.btnSpaTypes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSpaTypes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaTypes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaTypes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSpaTypes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSpaTypes.FillColor = System.Drawing.Color.White;
-            this.btnSpaTypes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaTypes.ForeColor = System.Drawing.Color.Black;
-            this.btnSpaTypes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaTypes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnSpaTypes.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaTypes.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaTypes.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
-            this.btnSpaTypes.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
-            this.btnSpaTypes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSpaTypes.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnSpaTypes.Location = new System.Drawing.Point(0, 221);
-            this.btnSpaTypes.Name = "btnSpaTypes";
-            this.btnSpaTypes.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSpaTypes.Size = new System.Drawing.Size(271, 55);
-            this.btnSpaTypes.TabIndex = 6;
-            this.btnSpaTypes.Text = "Các Dịch Vụ";
-            // 
-            // btnSpaCategory
-            // 
-            this.btnSpaCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaCategory.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaCategory.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSpaCategory.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
-            this.btnSpaCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSpaCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSpaCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSpaCategory.FillColor = System.Drawing.Color.White;
-            this.btnSpaCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaCategory.ForeColor = System.Drawing.Color.Black;
-            this.btnSpaCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnSpaCategory.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaCategory.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaCategory.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
-            this.btnSpaCategory.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
-            this.btnSpaCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSpaCategory.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnSpaCategory.Location = new System.Drawing.Point(0, 166);
-            this.btnSpaCategory.Name = "btnSpaCategory";
-            this.btnSpaCategory.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSpaCategory.Size = new System.Drawing.Size(271, 55);
-            this.btnSpaCategory.TabIndex = 5;
-            this.btnSpaCategory.Text = "Danh Mục";
-            // 
-            // btnSpaEmployee
-            // 
-            this.btnSpaEmployee.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaEmployee.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaEmployee.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSpaEmployee.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag_white;
-            this.btnSpaEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSpaEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSpaEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSpaEmployee.FillColor = System.Drawing.Color.White;
-            this.btnSpaEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaEmployee.ForeColor = System.Drawing.Color.Black;
-            this.btnSpaEmployee.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaEmployee.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnSpaEmployee.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaEmployee.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaEmployee.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag_primary;
-            this.btnSpaEmployee.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag;
-            this.btnSpaEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSpaEmployee.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnSpaEmployee.Location = new System.Drawing.Point(0, 111);
-            this.btnSpaEmployee.Name = "btnSpaEmployee";
-            this.btnSpaEmployee.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSpaEmployee.Size = new System.Drawing.Size(271, 55);
-            this.btnSpaEmployee.TabIndex = 4;
-            this.btnSpaEmployee.Text = "Nhân Viên Spa";
-            // 
-            // btnSpaOrder
-            // 
-            this.btnSpaOrder.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaOrder.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaOrder.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnSpaOrder.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
-            this.btnSpaOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSpaOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSpaOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSpaOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSpaOrder.FillColor = System.Drawing.Color.White;
-            this.btnSpaOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaOrder.ForeColor = System.Drawing.Color.Black;
-            this.btnSpaOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaOrder.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnSpaOrder.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpaOrder.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnSpaOrder.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
-            this.btnSpaOrder.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
-            this.btnSpaOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSpaOrder.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnSpaOrder.Location = new System.Drawing.Point(0, 56);
-            this.btnSpaOrder.Name = "btnSpaOrder";
-            this.btnSpaOrder.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSpaOrder.Size = new System.Drawing.Size(271, 55);
-            this.btnSpaOrder.TabIndex = 3;
-            this.btnSpaOrder.Text = "Đơn Đặt Spa";
-            this.btnSpaOrder.Click += new System.EventHandler(this.btnSpaOrder_Click);
-            // 
-            // btnGrooming
-            // 
-            this.btnGrooming.BackColor = System.Drawing.Color.Transparent;
-            this.btnGrooming.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnGrooming.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrooming.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnGrooming.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_white;
-            this.btnGrooming.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrooming.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGrooming.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGrooming.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGrooming.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGrooming.FillColor = System.Drawing.Color.White;
-            this.btnGrooming.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrooming.ForeColor = System.Drawing.Color.Black;
-            this.btnGrooming.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnGrooming.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnGrooming.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrooming.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnGrooming.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_primary;
-            this.btnGrooming.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper;
-            this.btnGrooming.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnGrooming.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnGrooming.Location = new System.Drawing.Point(0, 0);
-            this.btnGrooming.Name = "btnGrooming";
-            this.btnGrooming.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGrooming.Size = new System.Drawing.Size(271, 55);
-            this.btnGrooming.TabIndex = 2;
-            this.btnGrooming.Text = "Dịch Vụ Spa Cắt Tỉa";
-            this.btnGrooming.Click += new System.EventHandler(this.btnGrooming_Click);
-            this.btnGrooming.MouseLeave += new System.EventHandler(this.btnGrooming_MouseLeave);
-            this.btnGrooming.MouseHover += new System.EventHandler(this.btnGrooming_MouseHover);
             // 
             // BookingServicePanel
             // 
@@ -498,10 +311,25 @@
             this.ToolbarPanel.Size = new System.Drawing.Size(1203, 40);
             this.ToolbarPanel.TabIndex = 4;
             // 
+            // menuButton
+            // 
+            this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuButton.FillColor = System.Drawing.Color.Transparent;
+            this.menuButton.Image = global::PetCareManagementSystem.GUI.Properties.Resources.icon_menu;
+            this.menuButton.ImageRotate = 0F;
+            this.menuButton.Location = new System.Drawing.Point(15, 10);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(20, 20);
+            this.menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuButton.TabIndex = 1;
+            this.menuButton.TabStop = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
             // SideMenuPanel
             // 
             this.SideMenuPanel.BackColor = System.Drawing.Color.White;
             this.SideMenuPanel.Controls.Add(this.GroomingPanel);
+            this.SideMenuPanel.Controls.Add(this.guna2Panel1);
             this.SideMenuPanel.Controls.Add(this.UserStatusPanel);
             this.SideMenuPanel.Controls.Add(this.LogoutPanel);
             this.SideMenuPanel.Controls.Add(this.BookingServicePanel);
@@ -513,6 +341,305 @@
             this.SideMenuPanel.Name = "SideMenuPanel";
             this.SideMenuPanel.Size = new System.Drawing.Size(286, 613);
             this.SideMenuPanel.TabIndex = 5;
+            // 
+            // GroomingPanel
+            // 
+            this.GroomingPanel.Controls.Add(this.btnArrowDown);
+            this.GroomingPanel.Controls.Add(this.btnSpaTypes);
+            this.GroomingPanel.Controls.Add(this.btnSpaCategory);
+            this.GroomingPanel.Controls.Add(this.btnSpaEmployee);
+            this.GroomingPanel.Controls.Add(this.btnSpaOrder);
+            this.GroomingPanel.Controls.Add(this.btnGrooming);
+            this.GroomingPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroomingPanel.Location = new System.Drawing.Point(0, 110);
+            this.GroomingPanel.MaximumSize = new System.Drawing.Size(286, 275);
+            this.GroomingPanel.MinimumSize = new System.Drawing.Size(286, 55);
+            this.GroomingPanel.Name = "GroomingPanel";
+            this.GroomingPanel.Size = new System.Drawing.Size(286, 63);
+            this.GroomingPanel.TabIndex = 11;
+            // 
+            // btnArrowDown
+            // 
+            this.btnArrowDown.BackColor = System.Drawing.Color.White;
+            this.btnArrowDown.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnArrowDown.HoverState.ImageSize = new System.Drawing.Size(25, 20);
+            this.btnArrowDown.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow_down;
+            this.btnArrowDown.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnArrowDown.ImageRotate = 0F;
+            this.btnArrowDown.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnArrowDown.Location = new System.Drawing.Point(237, 18);
+            this.btnArrowDown.Name = "btnArrowDown";
+            this.btnArrowDown.Size = new System.Drawing.Size(25, 20);
+            this.btnArrowDown.TabIndex = 3;
+            // 
+            // btnSpaTypes
+            // 
+            this.btnSpaTypes.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaTypes.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaTypes.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSpaTypes.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
+            this.btnSpaTypes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSpaTypes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaTypes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaTypes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSpaTypes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSpaTypes.FillColor = System.Drawing.Color.White;
+            this.btnSpaTypes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaTypes.ForeColor = System.Drawing.Color.Black;
+            this.btnSpaTypes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaTypes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnSpaTypes.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaTypes.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaTypes.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
+            this.btnSpaTypes.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
+            this.btnSpaTypes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSpaTypes.ImageOffset = new System.Drawing.Point(25, 0);
+            this.btnSpaTypes.Location = new System.Drawing.Point(0, 221);
+            this.btnSpaTypes.Name = "btnSpaTypes";
+            this.btnSpaTypes.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSpaTypes.Size = new System.Drawing.Size(271, 55);
+            this.btnSpaTypes.TabIndex = 6;
+            this.btnSpaTypes.Text = "Các Dịch Vụ";
+            // 
+            // btnSpaCategory
+            // 
+            this.btnSpaCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaCategory.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaCategory.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSpaCategory.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
+            this.btnSpaCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSpaCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSpaCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSpaCategory.FillColor = System.Drawing.Color.White;
+            this.btnSpaCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaCategory.ForeColor = System.Drawing.Color.Black;
+            this.btnSpaCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnSpaCategory.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaCategory.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaCategory.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
+            this.btnSpaCategory.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
+            this.btnSpaCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSpaCategory.ImageOffset = new System.Drawing.Point(25, 0);
+            this.btnSpaCategory.Location = new System.Drawing.Point(0, 166);
+            this.btnSpaCategory.Name = "btnSpaCategory";
+            this.btnSpaCategory.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSpaCategory.Size = new System.Drawing.Size(271, 55);
+            this.btnSpaCategory.TabIndex = 5;
+            this.btnSpaCategory.Text = "Danh Mục";
+            // 
+            // btnSpaEmployee
+            // 
+            this.btnSpaEmployee.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaEmployee.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaEmployee.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSpaEmployee.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag_white;
+            this.btnSpaEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSpaEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSpaEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSpaEmployee.FillColor = System.Drawing.Color.White;
+            this.btnSpaEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaEmployee.ForeColor = System.Drawing.Color.Black;
+            this.btnSpaEmployee.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaEmployee.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnSpaEmployee.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaEmployee.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaEmployee.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag_primary;
+            this.btnSpaEmployee.Image = global::PetCareManagementSystem.GUI.Properties.Resources.bag;
+            this.btnSpaEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSpaEmployee.ImageOffset = new System.Drawing.Point(25, 0);
+            this.btnSpaEmployee.Location = new System.Drawing.Point(0, 111);
+            this.btnSpaEmployee.Name = "btnSpaEmployee";
+            this.btnSpaEmployee.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSpaEmployee.Size = new System.Drawing.Size(271, 55);
+            this.btnSpaEmployee.TabIndex = 4;
+            this.btnSpaEmployee.Text = "Nhân Viên Spa";
+            // 
+            // btnSpaOrder
+            // 
+            this.btnSpaOrder.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaOrder.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaOrder.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnSpaOrder.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
+            this.btnSpaOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSpaOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSpaOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSpaOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSpaOrder.FillColor = System.Drawing.Color.White;
+            this.btnSpaOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaOrder.ForeColor = System.Drawing.Color.Black;
+            this.btnSpaOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaOrder.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnSpaOrder.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpaOrder.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnSpaOrder.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
+            this.btnSpaOrder.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
+            this.btnSpaOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSpaOrder.ImageOffset = new System.Drawing.Point(25, 0);
+            this.btnSpaOrder.Location = new System.Drawing.Point(0, 56);
+            this.btnSpaOrder.Name = "btnSpaOrder";
+            this.btnSpaOrder.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSpaOrder.Size = new System.Drawing.Size(271, 55);
+            this.btnSpaOrder.TabIndex = 3;
+            this.btnSpaOrder.Text = "Đơn Đặt Spa";
+            // 
+            // btnGrooming
+            // 
+            this.btnGrooming.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrooming.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnGrooming.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrooming.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnGrooming.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_white;
+            this.btnGrooming.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrooming.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGrooming.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGrooming.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGrooming.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGrooming.FillColor = System.Drawing.Color.White;
+            this.btnGrooming.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrooming.ForeColor = System.Drawing.Color.Black;
+            this.btnGrooming.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnGrooming.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnGrooming.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrooming.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnGrooming.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_primary;
+            this.btnGrooming.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper;
+            this.btnGrooming.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGrooming.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnGrooming.Location = new System.Drawing.Point(0, 0);
+            this.btnGrooming.Name = "btnGrooming";
+            this.btnGrooming.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGrooming.Size = new System.Drawing.Size(271, 61);
+            this.btnGrooming.TabIndex = 2;
+            this.btnGrooming.Text = "Dịch Vụ Spa Cắt Tỉa";
+            this.btnGrooming.Click += new System.EventHandler(this.btnGrooming_Click_1);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.BtnManRec);
+            this.guna2Panel1.Controls.Add(this.btnArD);
+            this.guna2Panel1.Controls.Add(this.BtnManageReceipt);
+            this.guna2Panel1.Controls.Add(this.ManagePro);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 177);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(268, 67);
+            this.guna2Panel1.TabIndex = 10;
+            this.guna2Panel1.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
+            this.guna2Panel1.MouseHover += new System.EventHandler(this.guna2Panel1_MouseHover);
+            // 
+            // btnArD
+            // 
+            this.btnArD.BackColor = System.Drawing.Color.White;
+            this.btnArD.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnArD.HoverState.ImageSize = new System.Drawing.Size(25, 20);
+            this.btnArD.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow_down;
+            this.btnArD.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnArD.ImageRotate = 0F;
+            this.btnArD.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnArD.Location = new System.Drawing.Point(234, 24);
+            this.btnArD.Name = "btnArD";
+            this.btnArD.Size = new System.Drawing.Size(25, 20);
+            this.btnArD.TabIndex = 10;
+            // 
+            // BtnManageReceipt
+            // 
+            this.BtnManageReceipt.BackColor = System.Drawing.Color.Transparent;
+            this.BtnManageReceipt.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManageReceipt.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManageReceipt.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.BtnManageReceipt.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_white;
+            this.BtnManageReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnManageReceipt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnManageReceipt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnManageReceipt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnManageReceipt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnManageReceipt.FillColor = System.Drawing.Color.White;
+            this.BtnManageReceipt.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManageReceipt.ForeColor = System.Drawing.Color.Black;
+            this.BtnManageReceipt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManageReceipt.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.BtnManageReceipt.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManageReceipt.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManageReceipt.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper_primary;
+            this.BtnManageReceipt.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper;
+            this.BtnManageReceipt.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnManageReceipt.ImageOffset = new System.Drawing.Point(10, 0);
+            this.BtnManageReceipt.Location = new System.Drawing.Point(0, 10);
+            this.BtnManageReceipt.Name = "BtnManageReceipt";
+            this.BtnManageReceipt.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnManageReceipt.Size = new System.Drawing.Size(271, 55);
+            this.BtnManageReceipt.TabIndex = 7;
+            this.BtnManageReceipt.Text = "Quản lý Phiếu Nhập Kho";
+            this.BtnManageReceipt.Click += new System.EventHandler(this.BtnManageReceipt_Click);
+            // 
+            // ManagePro
+            // 
+            this.ManagePro.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.ManagePro.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManagePro.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.ManagePro.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
+            this.ManagePro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ManagePro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ManagePro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ManagePro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ManagePro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ManagePro.FillColor = System.Drawing.Color.White;
+            this.ManagePro.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.ManagePro.ForeColor = System.Drawing.Color.Black;
+            this.ManagePro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.ManagePro.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.ManagePro.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManagePro.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.ManagePro.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
+            this.ManagePro.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
+            this.ManagePro.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ManagePro.ImageOffset = new System.Drawing.Point(25, 0);
+            this.ManagePro.Location = new System.Drawing.Point(0, 123);
+            this.ManagePro.Name = "ManagePro";
+            this.ManagePro.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ManagePro.Size = new System.Drawing.Size(271, 46);
+            this.ManagePro.TabIndex = 7;
+            this.ManagePro.Text = "Manage Product";
+            this.ManagePro.Click += new System.EventHandler(this.ManagePro_Click);
+            // 
+            // timerbtnRec
+            // 
+            this.timerbtnRec.Tick += new System.EventHandler(this.timerbtnRec_Tick);
+            // 
+            // BtnManRec
+            // 
+            this.BtnManRec.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManRec.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManRec.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.BtnManRec.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_white;
+            this.BtnManRec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnManRec.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnManRec.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnManRec.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnManRec.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnManRec.FillColor = System.Drawing.Color.White;
+            this.BtnManRec.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnManRec.ForeColor = System.Drawing.Color.Black;
+            this.BtnManRec.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManRec.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.BtnManRec.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnManRec.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.BtnManRec.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders_primary;
+            this.BtnManRec.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
+            this.BtnManRec.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnManRec.ImageOffset = new System.Drawing.Point(25, 0);
+            this.BtnManRec.Location = new System.Drawing.Point(3, 71);
+            this.BtnManRec.Name = "BtnManRec";
+            this.BtnManRec.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.BtnManRec.Size = new System.Drawing.Size(271, 46);
+            this.BtnManRec.TabIndex = 11;
+            this.BtnManRec.Text = "Manage Receipt";
+            this.BtnManRec.Click += new System.EventHandler(this.BtnManRec_Click_1);
             // 
             // MainForm
             // 
@@ -529,14 +656,15 @@
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.HeaderRightPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.DashboardPanel.ResumeLayout(false);
-            this.GroomingPanel.ResumeLayout(false);
             this.BookingServicePanel.ResumeLayout(false);
             this.UserStatusPanel.ResumeLayout(false);
             this.LogoutPanel.ResumeLayout(false);
             this.ToolbarPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.SideMenuPanel.ResumeLayout(false);
+            this.GroomingPanel.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -557,15 +685,21 @@
         private System.Windows.Forms.Timer SidebarTime;
         private Guna.UI2.WinForms.Guna2Panel BookingServicePanel;
         private Guna.UI2.WinForms.Guna2Button btnBookingService;
+        private System.Windows.Forms.Timer GroomingTimer;
+        private System.Windows.Forms.Panel ToolbarPanel;
+        private System.Windows.Forms.Panel SideMenuPanel;
+        private Guna.UI2.WinForms.Guna2Button BtnManageReceipt;
+        private System.Windows.Forms.Timer timerbtnRec;
+        private Guna.UI2.WinForms.Guna2Button ManagePro;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ImageButton btnArD;
         private Guna.UI2.WinForms.Guna2Panel GroomingPanel;
-        private Guna.UI2.WinForms.Guna2Button btnSpaOrder;
-        private Guna.UI2.WinForms.Guna2Button btnGrooming;
+        private Guna.UI2.WinForms.Guna2ImageButton btnArrowDown;
         private Guna.UI2.WinForms.Guna2Button btnSpaTypes;
         private Guna.UI2.WinForms.Guna2Button btnSpaCategory;
         private Guna.UI2.WinForms.Guna2Button btnSpaEmployee;
-        private System.Windows.Forms.Timer GroomingTimer;
-        private Guna.UI2.WinForms.Guna2ImageButton btnArrowDown;
-        private System.Windows.Forms.Panel ToolbarPanel;
-        private System.Windows.Forms.Panel SideMenuPanel;
+        private Guna.UI2.WinForms.Guna2Button btnSpaOrder;
+        private Guna.UI2.WinForms.Guna2Button btnGrooming;
+        private Guna.UI2.WinForms.Guna2Button BtnManRec;
     }
 }
