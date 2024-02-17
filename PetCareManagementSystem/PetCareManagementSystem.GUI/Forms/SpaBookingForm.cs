@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetCareManagementSystem.BLL;
+using PetCareManagementSystem.DTO.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,23 @@ namespace PetCareManagementSystem.GUI.Forms
 {
     public partial class SpaBookingForm : Form
     {
+        private RoomBookingBUS roomBookingBUS;
         public SpaBookingForm()
         {
             InitializeComponent();
+            roomBookingBUS = new RoomBookingBUS();
+        }
+
+        private void SpaBookingForm_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            var spaPetBookings = roomBookingBUS.GetAllSpaPetBookings();
+            dgSpaBooking.AutoGenerateColumns = false;
+            dgSpaBooking.DataSource = spaPetBookings;
         }
     }
 }

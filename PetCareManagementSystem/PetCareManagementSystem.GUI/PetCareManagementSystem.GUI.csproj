@@ -303,5 +303,8 @@
   <ItemGroup>
     <None Include="Resources\pie-chart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-bin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
