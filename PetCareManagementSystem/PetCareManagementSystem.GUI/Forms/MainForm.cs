@@ -302,7 +302,6 @@ namespace PetCareManagementSystem.GUI
             }
         }
 
-       
         private void ManageReceipt_FormClosed(object sender, FormClosedEventArgs e)
         {
             receiptForm = null;
@@ -360,6 +359,6 @@ namespace PetCareManagementSystem.GUI
         private void guna2Panel1_MouseLeave(object sender, EventArgs e)
         {
             btnArD.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow;
-        }
+        }  
     }
 }

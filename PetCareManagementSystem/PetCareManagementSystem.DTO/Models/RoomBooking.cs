@@ -27,6 +27,8 @@ namespace PetCareManagementSystem.DTO.Models
         public decimal? TotalPrice { get; set; }
 
         public decimal? TotalDiscount { get; set; }
+        public string Status { get; set; } 
+        public string PaymentStatus { get; set; }
 
         public virtual ICollection<BookingDetails> BookingDetails { get; set; } = new List<BookingDetails>();
 
