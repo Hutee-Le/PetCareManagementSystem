@@ -46,11 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\CateProDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
     <Compile Include="DAO\ReceiptDetailDAO.cs" />
     <Compile Include="DAO\RoomBookingDAO.cs" />
+    <Compile Include="DAO\RoomDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="SqlDataAccessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

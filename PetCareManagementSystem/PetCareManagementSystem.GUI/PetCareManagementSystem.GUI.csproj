@@ -90,6 +90,12 @@
     <Compile Include="Forms\AddProForm.Designer.cs">
       <DependentUpon>AddProForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddSpaBookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSpaBookingForm.Designer.cs">
+      <DependentUpon>AddSpaBookingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookingManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddProForm.resx">
       <DependentUpon>AddProForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSpaBookingForm.resx">
+      <DependentUpon>AddSpaBookingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookingManagementForm.resx">
       <DependentUpon>BookingManagementForm.cs</DependentUpon>
@@ -305,6 +314,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
