@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             InitializeComponent();
             roomBookingBUS = new RoomBookingBUS();
+            
+
         }
 
         private void SpaBookingForm_Load(object sender, EventArgs e)
@@ -29,8 +32,19 @@ namespace PetCareManagementSystem.GUI.Forms
         private void LoadData()
         {
             var spaPetBookings = roomBookingBUS.GetAllSpaPetBookings();
-            dgSpaBooking.AutoGenerateColumns = false;
             dgSpaBooking.DataSource = spaPetBookings;
+            dgSpaBooking.Refresh();
+        }
+
+        private void AddNewSpaBooking_Click(object sender, EventArgs e)
+        {
+            AddSpaBookingForm addForm = new AddSpaBookingForm();
+
+            if (addForm.ShowDialog(this) == DialogResult.OK)
+            {
+    
+                LoadData();
+            }
         }
     }
 }
