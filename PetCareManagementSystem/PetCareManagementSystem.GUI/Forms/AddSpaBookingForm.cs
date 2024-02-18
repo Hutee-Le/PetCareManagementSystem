@@ -16,11 +16,13 @@ namespace PetCareManagementSystem.GUI.Forms
     {
         private RoomBUS roomBUS;
         private CustomerBUS customerBUS;
+        private ServiceBUS serviceBUS;
         public AddSpaBookingForm()
         {
             InitializeComponent();
             roomBUS = new RoomBUS();
             customerBUS = new CustomerBUS();
+            serviceBUS = new ServiceBUS();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,6 +34,7 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             LoadRooms();
             LoadCustomers();
+            LoadServices();
         }
 
         public void LoadRooms()
@@ -57,6 +60,19 @@ namespace PetCareManagementSystem.GUI.Forms
             {
                 comboBoxCustomers.Items.Add(customer.Name);
                 comboBoxCustomers.Tag = customer.CustomerId; 
+            }
+        }
+
+        private void LoadServices()
+        {
+            comboBoxServices.Items.Add("Select Service...");
+            comboBoxServices.SelectedIndex = 0;
+
+            List<Service> services = serviceBUS.GetServicesByTypeName("DV Spa Pet");
+            foreach (Service service in services)
+            {
+                comboBoxServices.Items.Add(service.ServiceName);
+                comboBoxCustomers.Tag = service.ServiceId;
             }
         }
     }
