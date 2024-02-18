@@ -50,6 +50,7 @@
     <Compile Include="ReceiptDetailBUS.cs" />
     <Compile Include="RoomBookingBUS.cs" />
     <Compile Include="RoomBUS.cs" />
+    <Compile Include="ServiceBUS.cs" />
     <Compile Include="SupplierBUS.cs" />
   </ItemGroup>
   <ItemGroup>

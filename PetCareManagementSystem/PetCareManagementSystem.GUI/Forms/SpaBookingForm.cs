@@ -38,13 +38,25 @@ namespace PetCareManagementSystem.GUI.Forms
 
         private void AddNewSpaBooking_Click(object sender, EventArgs e)
         {
-            AddSpaBookingForm addForm = new AddSpaBookingForm();
+            //AddSpaBookingForm addForm = new AddSpaBookingForm();
 
-            if (addForm.ShowDialog(this) == DialogResult.OK)
-            {
-    
-                LoadData();
-            }
+            //if (addForm.ShowDialog(this) == DialogResult.OK)
+            //{
+
+            //    LoadData();
+            //}
+
+            AddSpaBookingForm addForm = new AddSpaBookingForm();
+            addForm.FormClosed += AddSpaBooking_FormClosed;
+            addForm.MdiParent = this.MdiParent;
+            addForm.FormBorderStyle = FormBorderStyle.None;
+            addForm.Dock = DockStyle.Fill;
+            addForm.Show();
+        }
+
+        private void AddSpaBooking_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            e = null;
         }
     }
 }

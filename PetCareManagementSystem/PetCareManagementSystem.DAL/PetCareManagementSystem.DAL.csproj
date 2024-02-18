@@ -53,6 +53,7 @@
     <Compile Include="DAO\ReceiptDetailDAO.cs" />
     <Compile Include="DAO\RoomBookingDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />
+    <Compile Include="DAO\ServiceDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="SqlDataAccessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
