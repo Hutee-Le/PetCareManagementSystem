@@ -48,6 +48,7 @@
     <Compile Include="DAO\CateProDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\PetDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\ReceiptDAO.cs" />
     <Compile Include="DAO\ReceiptDetailDAO.cs" />

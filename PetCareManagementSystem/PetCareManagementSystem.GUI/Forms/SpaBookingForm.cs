@@ -20,8 +20,7 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             InitializeComponent();
             roomBookingBUS = new RoomBookingBUS();
-            
-
+          
         }
 
         private void SpaBookingForm_Load(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace PetCareManagementSystem.GUI.Forms
 
         private void AddSpaBooking_FormClosed(object sender, FormClosedEventArgs e)
         {
-            e = null;
+            LoadData();
         }
     }
 }
