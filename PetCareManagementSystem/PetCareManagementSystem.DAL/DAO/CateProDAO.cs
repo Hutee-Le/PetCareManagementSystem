@@ -38,6 +38,30 @@ namespace PetCareManagementSystem.DAL.DAO
 
             return dt;
         }
+        public string GetNameCateById(int cateId)
+        {
+            string cateName = ""; // Initialize the category name
+
+            DataTable dt = new DataTable();
+            string query = "SELECT CateProName FROM CategoryProduct WHERE CateProID = @CateProID";
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@CateProID", cateId) };
+                dt = dataProvider.ExecuteSelectQuery(query, parameters);
+
+                if (dt.Rows.Count > 0)
+                {
+                    // Lấy tên loại sản phẩm từ dòng đầu tiên và cột đầu tiên của DataTable
+                    cateName = dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return cateName;
+        }
 
         public DataTable getCateName()
         {
