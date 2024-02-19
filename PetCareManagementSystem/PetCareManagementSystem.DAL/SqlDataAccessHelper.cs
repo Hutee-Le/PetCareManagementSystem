@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Collections;
+using System.Security.Cryptography;
 
 namespace PetCareManagementSystem.DAL
 {
@@ -183,20 +185,23 @@ namespace PetCareManagementSystem.DAL
         /// </method>
         public bool ExecuteDeleteQuery(String _query, SqlParameter[] sqlParameter)
         {
-            SqlCommand myCommand = new SqlCommand();
+            //SqlCommand myCommand = new SqlCommand();
             try
             {
-                myCommand.Connection = OpenConnection();
-                myCommand.CommandText = _query;
-                myCommand.Parameters.Add(sqlParameter);
-                myAdapter.DeleteCommand = myCommand;
-                myCommand.ExecuteNonQuery();
+                //     using (SqlConnection connection = OpenConnection())
+                //    SqlConnection tmp = OpenConnection();
+                using (SqlCommand myCommand = new SqlCommand(_query, OpenConnection()))
+                {
+                    myCommand.Parameters.AddRange(sqlParameter);
+                    myCommand.ExecuteNonQuery();
+                }
             }
             catch (SqlException e)
             {
-                Console.Write("Error - Connection.executeDeleteQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
+                Console.WriteLine("Error - ExecuteInsertQuery - Query: " + _query + "\nException: \n" + e.StackTrace.ToString());
                 return false;
             }
+            
             finally
             {
                 // Đóng kết nối trong khối finally để đảm bảo nó được đóng ngay cả khi có ngoại lệ xảy ra.

@@ -15,7 +15,7 @@ namespace PetCareManagementSystem.GUI.Forms
 {
     public partial class ManageReceiptForm : Form
     {
-        public ManageReceiptForm()
+        public ManageReceiptForm(Employees employees, LoginForm loginForm)
         {
             InitializeComponent();
             cateProBus = new CateProBUS();
@@ -23,16 +23,20 @@ namespace PetCareManagementSystem.GUI.Forms
             receiptBus = new ReceiptBUS();
             receiptDetailBus = new ReceiptDetailBUS();
             productBus = new ProductBUS();
+            _employees = employees;
+            _loginForm = loginForm;
         }
-        private CateProBUS cateProBus;
 
+        private CateProBUS cateProBus;
+        private LoginForm _loginForm;
         private SupplierBUS SupllierBus;
         private ReceiptBUS receiptBus;
         private ReceiptDetailBUS receiptDetailBus;
         private ProductBUS productBus;
-
+        private Employees _employees;
         private CategoryProduct selectedCate;
         private Suppliers selectedSup;
+
 
         private void listViewPro_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -251,7 +255,9 @@ namespace PetCareManagementSystem.GUI.Forms
                 {
                     totalAmount += decimal.Parse(item.SubItems[5].Text);
                 }
-                int receiptID = receiptBus.AddReceipt(employeeID, DateInput, totalAmount);
+
+
+                int receiptID = receiptBus.AddReceipt(_employees.EmployeeId, DateInput, totalAmount);
                 if (receiptID != -1)
                 {
                     MessageBox.Show("Lưu thành công phiếu nhập kho");

@@ -27,6 +27,7 @@ namespace PetCareManagementSystem.GUI
         private BookingManagementForm bookingManagementForm;
         private ManageReceiptForm receiptForm;
         private AddProForm addProForm;
+        private ManageProForm manageProForm;
         #endregion
 
         #region Constructor and Load
@@ -306,24 +307,24 @@ namespace PetCareManagementSystem.GUI
         {
             receiptForm = null;
         }
-        private void AddPro_FormClosed(object sender, FormClosedEventArgs e)
+        private void ManagePro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            addProForm = null;
+            manageProForm = null;
         }
         private void ManagePro_Click(object sender, EventArgs e)
         {
-            if (addProForm == null)
+            if (manageProForm == null)
             {
-                addProForm = new AddProForm();
-                addProForm.FormClosed += AddPro_FormClosed;
-                addProForm.MdiParent = this;
-                addProForm.FormBorderStyle = FormBorderStyle.None;
-                addProForm.Dock = DockStyle.Fill;
-                addProForm.Show();
+                manageProForm = new ManageProForm();
+                manageProForm.FormClosed += ManagePro_FormClosed;
+                manageProForm.MdiParent = this;
+                manageProForm.FormBorderStyle = FormBorderStyle.None;
+                manageProForm.Dock = DockStyle.Fill;
+                manageProForm.Show();
             }
             else
             {
-                addProForm.Activate();
+                manageProForm.Activate();
             }
         }
 
@@ -336,7 +337,7 @@ namespace PetCareManagementSystem.GUI
         {
             if (receiptForm == null)
             {
-                receiptForm = new ManageReceiptForm();
+                receiptForm = new ManageReceiptForm(_employees, _loginForm);
                 receiptForm.FormClosed += ManageReceipt_FormClosed;
                 receiptForm.MdiParent = this;
                 receiptForm.FormBorderStyle = FormBorderStyle.None;

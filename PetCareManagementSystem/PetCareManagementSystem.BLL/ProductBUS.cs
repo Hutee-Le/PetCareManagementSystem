@@ -37,18 +37,51 @@ namespace PetCareManagementSystem.BLL
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    //Product product = new Product();
-                    //product.ID = Int32.Parse(dr["IDClass"].ToString());
-                    //classdb.Instructor = dr["InstructorName"].ToString();
+                    Product product = new Product();
+                    product.ProductId = Int32.Parse(dr["ProductId"].ToString());
+                    product.ProductName = dr["ProductName"].ToString();
+                    product.CateProId = Int32.Parse(dr["CateProId"].ToString());
+                    product.UnitPrice = Decimal.Parse(dr["UnitPrice"].ToString());
+                    product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
+                   
 
-                    //classdb.Name = dr["Class"].ToString();
-
-                    //list.Add(classdb);
+                    list.Add(product);
                 }
             }
 
 
             return list;
+        }
+
+        public int countPro()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                int insertionSuccess = productDAO.countPro();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+        public bool DeleteProduct(int IDProduct)
+        {
+            try
+            {
+                // Call UpdateStudent in the DAO to update the student
+                bool updateSuccess = productDAO.DeleteProduct(IDProduct);
+
+                return updateSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
         public List<DTO.Models.Product> GetProByCateId(int v)
         {

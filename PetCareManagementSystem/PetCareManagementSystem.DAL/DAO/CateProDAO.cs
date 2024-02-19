@@ -38,6 +38,25 @@ namespace PetCareManagementSystem.DAL.DAO
 
             return dt;
         }
+
+        public DataTable getCateName()
+        {
+            DataTable dt = new DataTable(); // Initialize DataTable here
+            string query = "SELECT CateProName, COUNT(*) AS Total FROM Product p join CategoryProduct c on p.CateProID =c.CateProID GROUP BY CateProName";
+            try
+            {
+                dt = dataProvider.ExecuteSelectAllQuery(query);
+
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+
+            }
+            return dt;
+        }
         public DataTable GetProByCateId(int cateId)
         {
             DataTable dt = new DataTable();
