@@ -86,5 +86,24 @@ namespace PetCareManagementSystem.BLL
             return listcate;
 
         }
+        public string GetNameCateById(int cateID)
+        {
+            string cateName = ""; // Initialize the category name
+
+            try
+            {
+                // Gọi phương thức GetNameCateById trong cateproDAO để lấy tên loại sản phẩm
+                cateName = cateproDAO.GetNameCateById(cateID);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                // Trong trường hợp xảy ra ngoại lệ, trả về một giá trị đặc biệt để biểu thị sự thất bại
+                return "Error: " + e.Message;
+            }
+
+            return cateName;
+        }
+
     }
 }

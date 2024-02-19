@@ -83,6 +83,41 @@ namespace PetCareManagementSystem.BLL
                 return false;
             }
         }
+        public Product getProductByID(int productID)
+        {
+            DataTable dt = new DataTable();
+            Product product = new Product();
+            string categoryName = ""; // Khởi tạo categoryName ở đây
+
+            try
+            {
+                dt = productDAO.getProductByID(productID);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+                product.ProductId = Int32.Parse(dr["ProductId"].ToString());
+                product.ProductName = dr["ProductName"].ToString();
+                product.CateProId = Int32.Parse(dr["CateProId"].ToString());
+                product.Description = dr["Description"].ToString();
+                product.UnitPrice = Decimal.Parse(dr["UnitPrice"].ToString());
+                product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
+
+                // Lưu trữ categoryName
+              //  categoryName = cateproDAO.GetNameCateById(product.CateProId);
+            }
+
+            // Sử dụng categoryName nếu cần thiết
+            // Ví dụ: Console.WriteLine(categoryName);
+
+            return product;
+        }
+
         public List<DTO.Models.Product> GetProByCateId(int v)
         {
             DataTable dt = new DataTable();

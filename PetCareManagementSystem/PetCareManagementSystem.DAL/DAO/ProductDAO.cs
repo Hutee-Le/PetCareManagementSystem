@@ -32,6 +32,24 @@ namespace PetCareManagementSystem.DAL.DAO
             }
             return dt;
         }
+        public DataTable getProductByID(int proID)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM Product WHERE ProductID = @ProductID  ";
+
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@ProductID", proID) };
+                dt = dataProvider.ExecuteSelectQuery(query, parameters);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return dt;
+        }
+        
         public DataTable GetProByCateId(int cateId)
         {
             DataTable dt = new DataTable();
