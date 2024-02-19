@@ -102,6 +102,12 @@
     <Compile Include="Forms\BookingManagementForm.Designer.cs">
       <DependentUpon>BookingManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChartReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChartReceiptForm.Designer.cs">
+      <DependentUpon>ChartReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageProForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageProForm.Designer.cs">
+      <DependentUpon>ManageProForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageReceiptForm.cs">
       <SubType>Form</SubType>
@@ -149,6 +161,9 @@
     <EmbeddedResource Include="Forms\BookingManagementForm.resx">
       <DependentUpon>BookingManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChartReceiptForm.resx">
+      <DependentUpon>ChartReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageProForm.resx">
+      <DependentUpon>ManageProForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageReceiptForm.resx">
       <DependentUpon>ManageReceiptForm.cs</DependentUpon>

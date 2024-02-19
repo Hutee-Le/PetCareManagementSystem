@@ -31,7 +31,77 @@ namespace PetCareManagementSystem.DAL.DAO
             }
             return dt;
         }
+        public DataTable GetReceiptAnalisys()
+        {
 
+            string query = "SELECT * FROM Receipt WHERE ReceiptDate >= DATEADD(DAY, -7, GETDATE());";
+            try
+            {
+                dt = dataProvider.ExecuteSelectAllQuery(query);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return dt;
+
+
+        }
+        public DataTable GetReceiptbymonth()
+        {
+
+            string query = "SELECT* FROM Receipt WHERE YEAR(ReceiptDate) = YEAR(GETDATE()) AND MONTH(ReceiptDate) = MONTH(GETDATE());";
+            try
+            {
+                dt = dataProvider.ExecuteSelectAllQuery(query);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return dt;
+
+
+        }
+        public DataTable GetReceiptToday()
+        {
+
+            string query = "SELECT* FROM Receipt WHERE CONVERT(date, ReceiptDate) = CONVERT(date, GETDATE());";
+            try
+            {
+                dt = dataProvider.ExecuteSelectAllQuery(query);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return dt;
+
+
+        }
+        private DateTime startDate;
+        private DateTime endDate;
+        private int numberDays;
+
+        public bool LoadData(DateTime startDate, DateTime endDate)
+        {
+            endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day,
+                endDate.Hour, endDate.Minute, 59);
+            if (startDate != this.startDate || endDate != this.endDate)
+            {
+                this.startDate = startDate;
+                this.endDate = endDate;
+                this.numberDays = (endDate - startDate).Days;
+
+                Console.WriteLine("Refreshed data: {0} - {1}", startDate.ToString(), endDate.ToString());
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Data not refreshed, same query: {0} - {1}", startDate.ToString(), endDate.ToString());
+                return false;
+            }
+        }
         public int getIDReceipt()
         {
             int latestReceiptID = -1; // Initialize latestReceiptID here
@@ -92,6 +162,32 @@ namespace PetCareManagementSystem.DAL.DAO
 
             bool updateSuccess = dataProvider.ExecuteDeleteQuery(query, parameters);
             return updateSuccess;
+        }
+        public string FormatCurrency(decimal amount)
+        {
+            // Định dạng số tiền theo tiền Việt Nam
+            string formattedAmount = string.Format("{0:N0} VNĐ", amount);
+            return formattedAmount;
+        }
+        public string countSumReceipt()
+        {
+            string SumReceipt = ""; // Initialize latestReceiptID here
+            string query = "SELECT SUM(TotalAmount) FROM Receipt";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    decimal sum = Convert.ToDecimal(dt.Rows[0][0]);
+                    SumReceipt = FormatCurrency(sum);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return SumReceipt;
         }
 
     }

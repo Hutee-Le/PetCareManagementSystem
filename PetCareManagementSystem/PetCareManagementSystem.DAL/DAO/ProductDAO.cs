@@ -49,6 +49,14 @@ namespace PetCareManagementSystem.DAL.DAO
 
             return dt;
         }
+        public bool DeleteProduct(int ProductID)
+        {
+            string query = "DELETE FROM Product WHERE ProductID = @ProductID";
+            SqlParameter[] parameters = { new SqlParameter("@ProductID", SqlDbType.Int) { Value = ProductID } };
+
+            bool updateSuccess = dataProvider.ExecuteDeleteQuery(query, parameters);
+            return updateSuccess;
+        }
         public DataTable getProductIDbyName(string ProductName)
         {
             DataTable dt = new DataTable();
@@ -118,14 +126,35 @@ namespace PetCareManagementSystem.DAL.DAO
                 return false;
             }
         }
-
-        public bool DeleteProduct(int ProductID)
+        public int countPro()
         {
-            string query = "DELETE FROM Product WHERE ProductID = @ProductID";
-            SqlParameter[] parameters = { new SqlParameter("@ProductID", SqlDbType.Int) { Value = ProductID } };
-
-            bool updateSuccess = dataProvider.ExecuteDeleteQuery(query, parameters);
-            return updateSuccess;
+            int productCount = -1; // Initialize latestReceiptID here
+            string query = "SELECT COUNT(*) FROM Product";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    productCount = Convert.ToInt32(dt.Rows[0][0]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return productCount;
         }
+
+   
+
+        //public bool DeleteProduct(int ProductID)
+        //{
+        //    string query = "DELETE FROM Product WHERE ProductID = @ProductID";
+        //    SqlParameter[] parameters = { new SqlParameter("@ProductID", SqlDbType.Int) { Value = ProductID } };
+
+        //    bool updateSuccess = dataProvider.ExecuteDeleteQuery(query, parameters);
+        //    return updateSuccess;
+        //}
     }
 }
