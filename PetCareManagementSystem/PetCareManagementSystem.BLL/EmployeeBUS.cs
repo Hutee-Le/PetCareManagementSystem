@@ -18,6 +18,28 @@ namespace PetCareManagementSystem.BLL
             employeeDAO = new EmployeeDAO();
         }
 
+        public List<Employees> GetAllEmployees()
+        {
+            DataTable dtEmployees = employeeDAO.GetAllEmployees();
+            List<Employees> listEmployees = new List<Employees>();
+
+            foreach (DataRow dr in dtEmployees.Rows)
+            {
+                listEmployees.Add(new Employees()
+                {
+                    EmployeeId = Convert.ToInt32(dr["EmployeeID"]),
+                    Name = dr["Name"].ToString(),
+                    Email = dr["Email"].ToString(),
+                    Password = dr["Password"].ToString(),   
+                    ImageUrl = dr["ImageUrl"].ToString(),
+                    Address = dr["Address"].ToString(),
+                    PhoneNumber = dr["PhoneNumber"].ToString(),
+                    Status = dr["Status"].ToString(),
+                });
+            }
+            return listEmployees;
+        }
+
         public bool AuthenticateUser(string email, string password)
         {
             // Check if the email and password are not empty

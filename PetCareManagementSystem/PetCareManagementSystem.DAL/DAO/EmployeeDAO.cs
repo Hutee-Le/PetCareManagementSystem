@@ -17,7 +17,7 @@ namespace PetCareManagementSystem.DAL.DAO
             dataAccessHelper = new SqlDataAccessHelper();
         }
 
-        public DataTable GetEmployeeData()
+        public DataTable GetAllEmployees()
         {
             string query = "SELECT * FROM Employees";
             return dataAccessHelper.ExecuteSelectAllQuery(query);
