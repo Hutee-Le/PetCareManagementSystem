@@ -38,8 +38,6 @@
             this.inforSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
             this.AddNewSpaBooking = new Guna.UI2.WinForms.Guna2Button();
             this.dgSpaBooking = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.headerSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewLinkColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +52,8 @@
             this.Status = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.PaymentStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.deleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.headerSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.inforSpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSpaBooking)).BeginInit();
             this.headerSpa.SuspendLayout();
@@ -107,8 +107,8 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgSpaBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgSpaBooking.ColumnHeadersHeight = 50;
@@ -174,32 +174,6 @@
             this.dgSpaBooking.ThemeStyle.RowsStyle.Height = 50;
             this.dgSpaBooking.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgSpaBooking.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // headerSpa
-            // 
-            this.headerSpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.headerSpa.Controls.Add(this.label1);
-            this.headerSpa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerSpa.Location = new System.Drawing.Point(0, 0);
-            this.headerSpa.Name = "headerSpa";
-            this.headerSpa.Radius = 5;
-            this.headerSpa.Size = new System.Drawing.Size(1171, 100);
-            this.headerSpa.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(1147, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Đơn Đặt Spa";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ID
             // 
@@ -359,6 +333,32 @@
             this.deleteItem.ToolTipText = "🗑️";
             this.deleteItem.UseColumnTextForButtonValue = true;
             this.deleteItem.Width = 125;
+            // 
+            // headerSpa
+            // 
+            this.headerSpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.headerSpa.Controls.Add(this.label1);
+            this.headerSpa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerSpa.Location = new System.Drawing.Point(0, 0);
+            this.headerSpa.Name = "headerSpa";
+            this.headerSpa.Radius = 5;
+            this.headerSpa.Size = new System.Drawing.Size(1171, 100);
+            this.headerSpa.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(1147, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Đơn Đặt Spa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SpaBookingForm
             // 

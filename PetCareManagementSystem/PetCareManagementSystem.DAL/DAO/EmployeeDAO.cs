@@ -46,7 +46,7 @@ namespace PetCareManagementSystem.DAL.DAO
             WHERE e.Email = @Email";
 
             SqlParameter[] parameters = {
-            new SqlParameter("@Email", SqlDbType.VarChar) { Value = email }
+                new SqlParameter("@Email", SqlDbType.VarChar) { Value = email }
             };
 
             return dataAccessHelper.ExecuteSelectQuery(query, parameters);

@@ -17,12 +17,14 @@ namespace PetCareManagementSystem.GUI.Forms
         private RoomBUS roomBUS;
         private CustomerBUS customerBUS;
         private ServiceBUS serviceBUS;
+        private PetBUS petBUS;
         public AddSpaBookingForm()
         {
             InitializeComponent();
             roomBUS = new RoomBUS();
             customerBUS = new CustomerBUS();
             serviceBUS = new ServiceBUS();
+            petBUS = new PetBUS();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,15 +54,18 @@ namespace PetCareManagementSystem.GUI.Forms
 
         public void LoadCustomers()
         {
+            comboBoxCustomers.Items.Clear();
             comboBoxCustomers.Items.Add("Select Customer...");
-            comboBoxCustomers.SelectedIndex = 0;
+            
 
             List<Customers> customers = customerBUS.GetAll();
             foreach (Customers customer in customers)
             {
-                comboBoxCustomers.Items.Add(customer.Name);
-                comboBoxCustomers.Tag = customer.CustomerId; 
+                comboBoxCustomers.Items.Add(customer);
             }
+
+            comboBoxCustomers.SelectedIndex = 0;
+            comboBoxCustomers.DisplayMember = "Name";
         }
 
         private void LoadServices()
@@ -71,9 +76,40 @@ namespace PetCareManagementSystem.GUI.Forms
             List<Service> services = serviceBUS.GetServicesByTypeName("DV Spa Pet");
             foreach (Service service in services)
             {
-                comboBoxServices.Items.Add(service.ServiceName);
-                comboBoxCustomers.Tag = service.ServiceId;
+                comboBoxServices.Items.Add(service);
             }
+
+            comboBoxServices.DisplayMember = "ServiceName";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCustomers.SelectedItem is Customers selectedCustomer)
+            {
+                lblCustomerName.Text = selectedCustomer.Name;
+                lblPhoneNumber.Text = selectedCustomer.PhoneNumber;
+                lblUserEmail.Text = selectedCustomer.Email;
+
+                LoadPets(selectedCustomer.CustomerId);
+            }
+        }
+
+        private void LoadPets(int customerId)
+        {
+            cbxPetList.Items.Clear();
+
+            List<Pets> pets = petBUS.GetPetsByCustomerId(customerId);
+            foreach(Pets pet in pets)
+            {
+                cbxPetList.Items.Add(pet);
+            }
+
+            cbxPetList.DisplayMember = "Name";
         }
     }
 }
