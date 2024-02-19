@@ -31,6 +31,7 @@ namespace PetCareManagementSystem.GUI.Forms
         private void LoadData()
         {
             var spaPetBookings = roomBookingBUS.GetAllSpaPetBookings();
+            dgSpaBooking.AutoGenerateColumns = false;
             dgSpaBooking.DataSource = spaPetBookings;
             dgSpaBooking.Refresh();
         }
