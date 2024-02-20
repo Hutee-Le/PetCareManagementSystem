@@ -119,22 +119,23 @@ namespace PetCareManagementSystem.DAL.DAO
             }
         }
 
-        public bool UpdateProduct(int CateProID, string ProductName, string Description, int UnitPrice)
+        public bool UpdateProduct(int ProductId,int CateProID, string ProductName, string Description, decimal UnitPrice)
         {
-            string query = "INSERT INTO Product (CateProID, ProductName, Description,UnitPrice ) VALUES (@CateProID, @ProductName,@Description, @UnitPrice)";
-
+            string query = " UPDATE Product SET CateProID = @CateProID, ProductName = @ProductName, UnitPrice = @UnitPrice, Description = @Description WHERE ProductId = @ProductId";
+           
             try
             {
 
                 SqlParameter[] parameters =
                 {
+            new SqlParameter("@ProductId", ProductId),
             new SqlParameter("@CateProID", CateProID),
             new SqlParameter("@ProductName", ProductName),
             new SqlParameter("@Description", Description),
             new SqlParameter("@UnitPrice", UnitPrice)
         };
 
-                bool insertionSuccess = dataProvider.ExecuteInsertQuery(query, parameters);
+                bool insertionSuccess = dataProvider.ExecuteUpdateQuery1(query, parameters);
 
                 return insertionSuccess;
             }
@@ -144,6 +145,8 @@ namespace PetCareManagementSystem.DAL.DAO
                 return false;
             }
         }
+
+
         public int countPro()
         {
             int productCount = -1; // Initialize latestReceiptID here

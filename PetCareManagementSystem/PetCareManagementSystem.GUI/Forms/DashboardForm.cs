@@ -32,5 +32,11 @@ namespace PetCareManagementSystem.GUI.Forms
                 series.Points.AddXY(new DateTime(2024, i, 1), sampleRevenue); 
             }
         }
+
+        private void LblBaoCao_Click(object sender, EventArgs e)
+        {
+            ChartReceiptForm receiptForm = new ChartReceiptForm();  
+            receiptForm.ShowDialog();
+        }
     }
 }

@@ -104,6 +104,33 @@ namespace PetCareManagementSystem.BLL
 
             return cateName;
         }
+        public int getCateIDbyName(string v)
+        {
+            DataTable dt = new DataTable();
+            int CateId = -1;
+            try
+            {
+                dt = cateproDAO.getCateIDbyname(v);
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+
+
+            }
+            if (dt.Rows.Count > 0)
+            {
+                // Nếu có dòng dữ liệu trong DataTable, lấy ProductID từ dòng đầu tiên
+                DataRow dr = dt.Rows[0];
+                CateId = Int32.Parse(dr["CateProId"].ToString());
+            }
+
+            return CateId;
+
+
+        }
 
     }
 }

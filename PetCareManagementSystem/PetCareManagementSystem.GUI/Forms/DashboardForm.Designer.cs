@@ -350,6 +350,7 @@
             this.LblBaoCao.TabIndex = 1;
             this.LblBaoCao.Text = "Báo cáo";
             this.LblBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblBaoCao.Click += new System.EventHandler(this.LblBaoCao_Click);
             // 
             // LblTongQuan
             // 

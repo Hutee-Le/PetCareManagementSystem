@@ -81,6 +81,24 @@ namespace PetCareManagementSystem.DAL.DAO
             }
             return dt;
         }
+
+        public DataTable getCateIDbyname(string CateName)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT CateProId FROM CategoryProduct WHERE CateProName = @CateProName";
+
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@CateProName", CateName) };
+                dt = dataProvider.ExecuteSelectQuery(query, parameters);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return dt;
+        }
         public DataTable GetProByCateId(int cateId)
         {
             DataTable dt = new DataTable();
