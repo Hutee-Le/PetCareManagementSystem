@@ -204,5 +204,20 @@ namespace PetCareManagementSystem.BLL
                 return false;
             }
         }
+        public bool UpdateProduct(int ProductId,int CateProID, string ProductName, string Description, decimal UnitPrice)
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                bool insertionSuccess = productDAO.UpdateProduct(ProductId, CateProID, ProductName, Description, UnitPrice);
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
     }
 }

@@ -179,6 +179,28 @@ namespace PetCareManagementSystem.DAL
             }
             return true;
         }
+        public bool ExecuteUpdateQuery1(string query, SqlParameter[] parameters)
+        {
+            // SqlCommand myCommand = new SqlCommand();
+            try
+            {
+                // using (SqlConnection connection = OpenConnection())
+                using (SqlCommand myCommand = new SqlCommand(query, OpenConnection()))
+                {
+                    myCommand.Parameters.AddRange(parameters);
+                    myCommand.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeUpdateQuery - Query: " + query + " \nException: " + e.StackTrace.ToString());
+                return false;
+            }
+            finally
+            {
+            }
+            return true;
+        }
 
         /// <method>
         /// Delete Query
