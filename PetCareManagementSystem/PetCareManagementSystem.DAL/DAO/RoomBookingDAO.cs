@@ -60,5 +60,29 @@ namespace PetCareManagementSystem.DAL.DAO
 
             return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
         }
+
+        public bool DeleteRoomBooking(int bookingId)
+        {
+            string query = "DELETE FROM RoomBookings WHERE BookingID = @BookingID";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@BookingID", SqlDbType.Int) { Value = bookingId }
+            };
+
+            return dataAccessHelper.ExecuteDeleteQuery(query, parameters);
+        }
+
+        public bool UpdateBookingPaymentStatus(int bookingId, string paymentStatus)
+        {
+            string query = "UPDATE RoomBookings SET PaymentStatus = @paymentStatus WHERE BookingID = @bookingId";
+
+            SqlParameter[] parameters = new SqlParameter[]
+           {
+            new SqlParameter("@BookingID", bookingId),
+            new SqlParameter("@paymentStatus", paymentStatus)
+           };
+
+            return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
+        }
     }
 }

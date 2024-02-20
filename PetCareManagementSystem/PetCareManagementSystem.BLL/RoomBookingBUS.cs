@@ -28,6 +28,11 @@ namespace PetCareManagementSystem.BLL
             return _dao.CreateRoomBooking(roomBooking.RoomId, roomBooking.PetId, roomBooking.EmployeeId, roomBooking.Date, roomBooking.StartTime, roomBooking.EndTime, roomBooking.TotalPrice, roomBooking.TotalDiscount, roomBooking.Status, roomBooking.PaymentStatus);
         }
 
+        public bool DeleteRoomBooking(int bookingId)
+        {
+            return _dao.DeleteRoomBooking(bookingId);
+        }
+
         public List<SpaPetBookingDetail> GetAllSpaPetBookings()
         {
             DataTable dtBookings = _dao.GetAllSpaPetBookings();
@@ -55,6 +60,11 @@ namespace PetCareManagementSystem.BLL
             }
 
             return listBookings;
+        }
+
+        public void UpdateBookingPaymentStatus(int bookingId, string paymentStatus)
+        {
+            _dao.UpdateBookingPaymentStatus(bookingId, paymentStatus);
         }
 
         public void UpdateBookingStatusAndRoomEmployee(int bookingId, int roomId, int employeeId, string status)
