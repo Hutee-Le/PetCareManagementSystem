@@ -90,5 +90,10 @@ namespace PetCareManagementSystem.BLL
 
             return null;
         }
+
+        public bool UpdateEmployeeStatus(int employeeId, string status)
+        {
+            return employeeDAO.UpdateEmployeeStatus(employeeId, status);
+        }
     }
 }

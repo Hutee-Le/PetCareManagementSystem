@@ -9,6 +9,8 @@ namespace PetCareManagementSystem.DTO.ViewModels
     public class SpaPetBookingDetail
     {
         public int BookingID { get; set; }
+        public int RoomID { get; set; }
+        public int EmployeeID { get; set; }
         public string CustomerName { get; set; }
         public DateTime Date { get; set; }
         public string ServiceName { get; set; }

@@ -154,6 +154,33 @@ namespace PetCareManagementSystem.DAL
             return rowsAffected; // Trả về số hàng bị ảnh hưởng
         }
 
+        public int ExecuteInsertAndGetId(string _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            int id = 0;
+            try
+            {
+                myCommand.Connection = OpenConnection();
+                myCommand.CommandText = _query;
+                myCommand.Parameters.AddRange(sqlParameter);
+                // Sử dụng ExecuteScalar để lấy ID mới được tạo
+                id = Convert.ToInt32(myCommand.ExecuteScalar());
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeInsertQuery - Query: " + _query + " \nException: \n" + e.StackTrace.ToString());
+                return -1; // Hoặc một giá trị đặc biệt để biểu thị lỗi
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return id;
+        }
+
 
         /// <method>
         /// Update Query
