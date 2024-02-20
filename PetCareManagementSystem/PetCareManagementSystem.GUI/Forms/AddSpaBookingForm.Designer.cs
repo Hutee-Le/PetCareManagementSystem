@@ -31,19 +31,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSpaBookingForm));
             this.AddSpaBookingPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelChooseCustomer = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxCustomers = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.llblNewCustomer = new System.Windows.Forms.LinkLabel();
+            this.panelRight = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.panelBooking = new System.Windows.Forms.Panel();
             this.comboBoxEmployees = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblEmployee = new System.Windows.Forms.Label();
             this.comboBoxServices = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblService = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.dtpTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblDate = new System.Windows.Forms.Label();
             this.llblNewPet = new System.Windows.Forms.LinkLabel();
@@ -57,27 +62,26 @@
             this.lblUpdateTime = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.llblNewCustomer = new System.Windows.Forms.LinkLabel();
-            this.comboBoxCustomers = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.listViewRooms = new System.Windows.Forms.ListView();
             this.imageListRooms = new System.Windows.Forms.ImageList(this.components);
+            this.roundedPanel1 = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
+            this.comboBoxMinute = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxHour = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.AddSpaBookingPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelChooseCustomer.SuspendLayout();
+            this.panelRight.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.panelBooking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.roundedPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddSpaBookingPanel
             // 
             this.AddSpaBookingPanel.BackColor = System.Drawing.Color.White;
-            this.AddSpaBookingPanel.Controls.Add(this.btnClose);
-            this.AddSpaBookingPanel.Controls.Add(this.panel1);
-            this.AddSpaBookingPanel.Controls.Add(this.llblNewCustomer);
-            this.AddSpaBookingPanel.Controls.Add(this.comboBoxCustomers);
-            this.AddSpaBookingPanel.Controls.Add(this.label2);
-            this.AddSpaBookingPanel.Controls.Add(this.label1);
+            this.AddSpaBookingPanel.Controls.Add(this.panelChooseCustomer);
+            this.AddSpaBookingPanel.Controls.Add(this.panelRight);
             this.AddSpaBookingPanel.Controls.Add(this.listViewRooms);
             this.AddSpaBookingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddSpaBookingPanel.Location = new System.Drawing.Point(0, 0);
@@ -85,62 +89,139 @@
             this.AddSpaBookingPanel.Size = new System.Drawing.Size(1153, 844);
             this.AddSpaBookingPanel.TabIndex = 2;
             // 
-            // btnClose
+            // panelChooseCustomer
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.Red;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1114, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 30);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "X";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.panelChooseCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelChooseCustomer.Controls.Add(this.label2);
+            this.panelChooseCustomer.Controls.Add(this.comboBoxCustomers);
+            this.panelChooseCustomer.Controls.Add(this.llblNewCustomer);
+            this.panelChooseCustomer.Location = new System.Drawing.Point(631, 50);
+            this.panelChooseCustomer.Name = "panelChooseCustomer";
+            this.panelChooseCustomer.Size = new System.Drawing.Size(522, 93);
+            this.panelChooseCustomer.TabIndex = 22;
             // 
-            // panel1
+            // label2
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label2.Location = new System.Drawing.Point(14, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Chọn Khách hàng";
+            // 
+            // comboBoxCustomers
+            // 
+            this.comboBoxCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCustomers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxCustomers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCustomers.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCustomers.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxCustomers.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.comboBoxCustomers.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxCustomers.HoverState.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCustomers.ItemHeight = 30;
+            this.comboBoxCustomers.Location = new System.Drawing.Point(10, 38);
+            this.comboBoxCustomers.Name = "comboBoxCustomers";
+            this.comboBoxCustomers.Size = new System.Drawing.Size(503, 36);
+            this.comboBoxCustomers.TabIndex = 5;
+            this.comboBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomers_SelectedIndexChanged);
+            // 
+            // llblNewCustomer
+            // 
+            this.llblNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.llblNewCustomer.AutoSize = true;
+            this.llblNewCustomer.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblNewCustomer.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblNewCustomer.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.llblNewCustomer.Location = new System.Drawing.Point(431, 12);
+            this.llblNewCustomer.Name = "llblNewCustomer";
+            this.llblNewCustomer.Size = new System.Drawing.Size(82, 17);
+            this.llblNewCustomer.TabIndex = 6;
+            this.llblNewCustomer.TabStop = true;
+            this.llblNewCustomer.Text = "+ Thêm mới";
+            // 
+            // panelRight
+            // 
+            this.panelRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.comboBoxEmployees);
-            this.panel1.Controls.Add(this.lblEmployee);
-            this.panel1.Controls.Add(this.comboBoxServices);
-            this.panel1.Controls.Add(this.lblService);
-            this.panel1.Controls.Add(this.lblTime);
-            this.panel1.Controls.Add(this.dtpTime);
-            this.panel1.Controls.Add(this.dtpDate);
-            this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Controls.Add(this.llblNewPet);
-            this.panel1.Controls.Add(this.cbxPetList);
-            this.panel1.Controls.Add(this.lblPet);
-            this.panel1.Controls.Add(this.lblDeleteChoose);
-            this.panel1.Controls.Add(this.lblUserEmail);
-            this.panel1.Controls.Add(this.lblPhoneNumber);
-            this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.lblPhone);
-            this.panel1.Controls.Add(this.lblUpdateTime);
-            this.panel1.Controls.Add(this.lblCustomerName);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel1.Location = new System.Drawing.Point(631, 148);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 696);
-            this.panel1.TabIndex = 7;
+            this.panelRight.Controls.Add(this.label1);
+            this.panelRight.Controls.Add(this.btnSave);
+            this.panelRight.Controls.Add(this.btnCancel);
+            this.panelRight.Controls.Add(this.guna2Panel1);
+            this.panelRight.Controls.Add(this.btnClose);
+            this.panelRight.Controls.Add(this.panelBooking);
+            this.panelRight.Location = new System.Drawing.Point(631, 0);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(522, 844);
+            this.panelRight.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(280, 47);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tạo mới Đặt chỗ Tắm rửa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.BorderRadius = 4;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(150)))), ((int)(((byte)(244)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::PetCareManagementSystem.GUI.Properties.Resources.diskette;
+            this.btnSave.Location = new System.Drawing.Point(13, 775);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(88, 45);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.BorderRadius = 4;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnCancel.Image = global::PetCareManagementSystem.GUI.Properties.Resources.right_arrow_primary;
+            this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnCancel.Location = new System.Drawing.Point(118, 775);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(127, 45);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
             this.guna2Panel1.Controls.Add(this.lblPrice);
             this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 533);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 669);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(522, 75);
             this.guna2Panel1.TabIndex = 19;
@@ -171,44 +252,52 @@
             this.label5.Text = "Tổng số tiền";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.BorderRadius = 4;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.btnCancel.Image = global::PetCareManagementSystem.GUI.Properties.Resources.right_arrow_primary;
-            this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnCancel.Location = new System.Drawing.Point(127, 639);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(127, 45);
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Hủy bỏ";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.FillColor = System.Drawing.Color.Red;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(483, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(39, 30);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "X";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnSave
+            // panelBooking
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.BorderRadius = 4;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(150)))), ((int)(((byte)(244)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::PetCareManagementSystem.GUI.Properties.Resources.diskette;
-            this.btnSave.Location = new System.Drawing.Point(17, 639);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 45);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.panelBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBooking.Controls.Add(this.roundedPanel1);
+            this.panelBooking.Controls.Add(this.comboBoxEmployees);
+            this.panelBooking.Controls.Add(this.lblEmployee);
+            this.panelBooking.Controls.Add(this.comboBoxServices);
+            this.panelBooking.Controls.Add(this.lblService);
+            this.panelBooking.Controls.Add(this.lblTime);
+            this.panelBooking.Controls.Add(this.dtpDate);
+            this.panelBooking.Controls.Add(this.lblDate);
+            this.panelBooking.Controls.Add(this.llblNewPet);
+            this.panelBooking.Controls.Add(this.cbxPetList);
+            this.panelBooking.Controls.Add(this.lblPet);
+            this.panelBooking.Controls.Add(this.lblDeleteChoose);
+            this.panelBooking.Controls.Add(this.lblUserEmail);
+            this.panelBooking.Controls.Add(this.lblPhoneNumber);
+            this.panelBooking.Controls.Add(this.lblEmail);
+            this.panelBooking.Controls.Add(this.lblPhone);
+            this.panelBooking.Controls.Add(this.lblUpdateTime);
+            this.panelBooking.Controls.Add(this.lblCustomerName);
+            this.panelBooking.Controls.Add(this.guna2CirclePictureBox1);
+            this.panelBooking.Location = new System.Drawing.Point(0, 50);
+            this.panelBooking.Name = "panelBooking";
+            this.panelBooking.Size = new System.Drawing.Size(522, 613);
+            this.panelBooking.TabIndex = 7;
+            this.panelBooking.Visible = false;
             // 
             // comboBoxEmployees
             // 
@@ -288,32 +377,15 @@
             this.lblTime.TabIndex = 14;
             this.lblTime.Text = "Thời gian";
             // 
-            // dtpTime
-            // 
-            this.dtpTime.Animated = true;
-            this.dtpTime.BackColor = System.Drawing.Color.Transparent;
-            this.dtpTime.Checked = true;
-            this.dtpTime.CustomFormat = "HH:mm";
-            this.dtpTime.FillColor = System.Drawing.Color.White;
-            this.dtpTime.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(280, 296);
-            this.dtpTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.ShowUpDown = true;
-            this.dtpTime.Size = new System.Drawing.Size(188, 43);
-            this.dtpTime.TabIndex = 13;
-            this.dtpTime.Value = new System.DateTime(2024, 2, 18, 21, 19, 0, 0);
-            // 
             // dtpDate
             // 
             this.dtpDate.Animated = true;
             this.dtpDate.BackColor = System.Drawing.Color.Transparent;
             this.dtpDate.Checked = true;
+            this.dtpDate.CustomFormat = "yyyy-MM-dd";
             this.dtpDate.FillColor = System.Drawing.Color.White;
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(17, 296);
             this.dtpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -395,6 +467,7 @@
             this.lblDeleteChoose.TabIndex = 7;
             this.lblDeleteChoose.TabStop = true;
             this.lblDeleteChoose.Text = "🗑️";
+            this.lblDeleteChoose.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblDeleteChoose_LinkClicked);
             // 
             // lblUserEmail
             // 
@@ -471,65 +544,6 @@
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // llblNewCustomer
-            // 
-            this.llblNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.llblNewCustomer.AutoSize = true;
-            this.llblNewCustomer.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblNewCustomer.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblNewCustomer.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.llblNewCustomer.Location = new System.Drawing.Point(1059, 62);
-            this.llblNewCustomer.Name = "llblNewCustomer";
-            this.llblNewCustomer.Size = new System.Drawing.Size(82, 17);
-            this.llblNewCustomer.TabIndex = 6;
-            this.llblNewCustomer.TabStop = true;
-            this.llblNewCustomer.Text = "+ Thêm mới";
-            // 
-            // comboBoxCustomers
-            // 
-            this.comboBoxCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxCustomers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxCustomers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCustomers.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxCustomers.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxCustomers.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.comboBoxCustomers.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxCustomers.HoverState.ForeColor = System.Drawing.Color.White;
-            this.comboBoxCustomers.ItemHeight = 30;
-            this.comboBoxCustomers.Location = new System.Drawing.Point(638, 93);
-            this.comboBoxCustomers.Name = "comboBoxCustomers";
-            this.comboBoxCustomers.Size = new System.Drawing.Size(503, 36);
-            this.comboBoxCustomers.TabIndex = 5;
-            this.comboBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomers_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(640, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Chọn Khách hàng";
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(632, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(521, 47);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tạo mới Đặt chỗ Tắm rửa";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // listViewRooms
             // 
             this.listViewRooms.Dock = System.Windows.Forms.DockStyle.Left;
@@ -550,6 +564,63 @@
             this.imageListRooms.Images.SetKeyName(0, "dog-green.png");
             this.imageListRooms.Images.SetKeyName(1, "dog-red.png");
             // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.Controls.Add(this.comboBoxMinute);
+            this.roundedPanel1.Controls.Add(this.comboBoxHour);
+            this.roundedPanel1.Controls.Add(this.label3);
+            this.roundedPanel1.Location = new System.Drawing.Point(280, 296);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Radius = 4;
+            this.roundedPanel1.Size = new System.Drawing.Size(225, 50);
+            this.roundedPanel1.TabIndex = 19;
+            // 
+            // comboBoxMinute
+            // 
+            this.comboBoxMinute.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxMinute.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxMinute.DropDownHeight = 130;
+            this.comboBoxMinute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMinute.DropDownWidth = 60;
+            this.comboBoxMinute.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMinute.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMinute.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxMinute.IntegralHeight = false;
+            this.comboBoxMinute.ItemHeight = 35;
+            this.comboBoxMinute.Location = new System.Drawing.Point(131, 1);
+            this.comboBoxMinute.Name = "comboBoxMinute";
+            this.comboBoxMinute.Size = new System.Drawing.Size(90, 41);
+            this.comboBoxMinute.TabIndex = 4;
+            // 
+            // comboBoxHour
+            // 
+            this.comboBoxHour.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxHour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxHour.DropDownHeight = 130;
+            this.comboBoxHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxHour.DropDownWidth = 60;
+            this.comboBoxHour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxHour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxHour.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxHour.IntegralHeight = false;
+            this.comboBoxHour.ItemHeight = 35;
+            this.comboBoxHour.Location = new System.Drawing.Point(0, 1);
+            this.comboBoxHour.Name = "comboBoxHour";
+            this.comboBoxHour.Size = new System.Drawing.Size(90, 41);
+            this.comboBoxHour.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(96, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 35);
+            this.label3.TabIndex = 2;
+            this.label3.Text = ":";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AddSpaBookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -562,12 +633,15 @@
             this.Text = "AddSpaBookingForm";
             this.Load += new System.EventHandler(this.AddSpaBookingForm_Load);
             this.AddSpaBookingPanel.ResumeLayout(false);
-            this.AddSpaBookingPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelChooseCustomer.ResumeLayout(false);
+            this.panelChooseCustomer.PerformLayout();
+            this.panelRight.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.panelBooking.ResumeLayout(false);
+            this.panelBooking.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.roundedPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -580,7 +654,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxCustomers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel llblNewCustomer;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelBooking;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblUpdateTime;
         private System.Windows.Forms.Label lblCustomerName;
@@ -595,7 +669,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDate;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTime;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxEmployees;
@@ -606,5 +679,11 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.Panel panelChooseCustomer;
+        private CustomControls.RoundedPanel roundedPanel1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxMinute;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxHour;
     }
 }

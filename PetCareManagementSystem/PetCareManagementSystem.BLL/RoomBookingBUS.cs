@@ -1,4 +1,5 @@
 ﻿using PetCareManagementSystem.DAL.DAO;
+using PetCareManagementSystem.DTO.Models;
 using PetCareManagementSystem.DTO.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,19 @@ namespace PetCareManagementSystem.BLL
     public class RoomBookingBUS
     {
         private RoomBookingDAO _dao;
+        private RoomDAO roomDAO;
+        private EmployeeDAO employeeDAO;
 
         public RoomBookingBUS()
         {
             _dao = new RoomBookingDAO();
+            roomDAO = new RoomDAO();
+            employeeDAO = new EmployeeDAO();
+        }
+
+        public int CreateRoomBooking(RoomBooking roomBooking)
+        {
+            return _dao.CreateRoomBooking(roomBooking.RoomId, roomBooking.PetId, roomBooking.EmployeeId, roomBooking.Date, roomBooking.StartTime, roomBooking.EndTime, roomBooking.TotalPrice, roomBooking.TotalDiscount, roomBooking.Status, roomBooking.PaymentStatus);
         }
 
         public List<SpaPetBookingDetail> GetAllSpaPetBookings()
@@ -28,6 +38,8 @@ namespace PetCareManagementSystem.BLL
                 listBookings.Add(new SpaPetBookingDetail
                 {
                     BookingID = Convert.ToInt32(row["BookingID"]),
+                    RoomID = Convert.ToInt32(row["RoomID"]),
+                    EmployeeID = Convert.ToInt32(row["EmployeeID"]),
                     CustomerName = row["Name"].ToString(),
                     Date = Convert.ToDateTime(row["Date"]),
                     ServiceName = row["ServiceName"].ToString(),
@@ -43,6 +55,23 @@ namespace PetCareManagementSystem.BLL
             }
 
             return listBookings;
+        }
+
+        public void UpdateBookingStatusAndRoomEmployee(int bookingId, int roomId, int employeeId, string status)
+        {
+            _dao.UpdateBookingStatus(bookingId, status);
+
+            if (status == "Completed" || status == "Cancelled" || status == "Rejected")
+            {
+                roomDAO.UpdateRoomStatus(roomId, "Available");
+                employeeDAO.UpdateEmployeeStatus(employeeId, "Available");
+            }
+
+            if (status == "Confirmed" || status == "In Progress")
+            {
+                roomDAO.UpdateRoomStatus(roomId, "Unavailable");
+                employeeDAO.UpdateEmployeeStatus(employeeId, "Busy");
+            }
         }
     }
 }

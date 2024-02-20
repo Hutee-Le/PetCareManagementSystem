@@ -51,5 +51,17 @@ namespace PetCareManagementSystem.DAL.DAO
 
             return dataAccessHelper.ExecuteSelectQuery(query, parameters);
         }
+
+        public bool UpdateEmployeeStatus(int employeeId, string status)
+        {
+            string query = "UPDATE Employees SET Status = @Status WHERE EmployeeID = @EmployeeId";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@EmployeeId", employeeId),
+                new SqlParameter("@Status", status)
+            };
+
+            return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
+        }
     }
 }

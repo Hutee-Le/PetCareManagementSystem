@@ -36,5 +36,10 @@ namespace PetCareManagementSystem.BLL
             }
             return rooms;
         }
+
+        public bool UpdateRoomStatus(int roomId, string status)
+        {
+            return _dao.UpdateRoomStatus(roomId, status);
+        }
     }
 }
