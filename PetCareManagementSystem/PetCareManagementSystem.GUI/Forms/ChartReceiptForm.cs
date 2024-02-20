@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PetCareManagementSystem.GUI.Forms
 {
@@ -45,11 +46,15 @@ namespace PetCareManagementSystem.GUI.Forms
             label3.Text = countSumReceipt.ToString();
             TypeCatechart.DataSource = cateProBUS.getCateName();
 
-            TypeCatechart.Series[0].XValueMember = "CateProName";
-            TypeCatechart.Series[0].YValueMembers = "CateProID";
+            TypeCatechart.Series[0].XValueMember = "CateProName"; // Tên loại sản phẩm
+            TypeCatechart.Series[0].YValueMembers = "CateProID"; // Số lượng sản phẩm
+            TypeCatechart.Series[0].IsValueShownAsLabel = true; // Hiển thị giá trị nhãn
+
+            // Chỉ định loại biểu đồ là Doughnut
+            TypeCatechart.Series[0].ChartType = SeriesChartType.Doughnut;
+
+            // Cập nhật dữ liệu vào biểu đồ
             TypeCatechart.DataBind();
-
-
             NumberReceiptchart.DataSource = receiptBUS.getAll();
             NumberReceiptchart.Series[0].XValueMember = "ReceiptDate";
             NumberReceiptchart.Series[0].YValueMembers = "TotalAmount";

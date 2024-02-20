@@ -126,6 +126,12 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageCateProForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageCateProForm.Designer.cs">
+      <DependentUpon>ManageCateProForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageProForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageCateProForm.resx">
+      <DependentUpon>ManageCateProForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProForm.resx">
       <DependentUpon>ManageProForm.cs</DependentUpon>
