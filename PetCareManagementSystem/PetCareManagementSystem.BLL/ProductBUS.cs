@@ -41,6 +41,7 @@ namespace PetCareManagementSystem.BLL
                     product.ProductId = Int32.Parse(dr["ProductId"].ToString());
                     product.ProductName = dr["ProductName"].ToString();
                     product.CateProId = Int32.Parse(dr["CateProId"].ToString());
+                    product.Description = dr["Description"].ToString();
                     product.UnitPrice = Decimal.Parse(dr["UnitPrice"].ToString());
                     product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
                    
@@ -103,8 +104,9 @@ namespace PetCareManagementSystem.BLL
                 DataRow dr = dt.Rows[0];
                 product.ProductId = Int32.Parse(dr["ProductId"].ToString());
                 product.ProductName = dr["ProductName"].ToString();
-                product.CateProId = Int32.Parse(dr["CateProId"].ToString());
                 product.Description = dr["Description"].ToString();
+                product.CateProId = Int32.Parse(dr["CateProId"].ToString());
+               
                 product.UnitPrice = Decimal.Parse(dr["UnitPrice"].ToString());
                 product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
 
@@ -142,12 +144,12 @@ namespace PetCareManagementSystem.BLL
                     Product product = new Product();
                     product.ProductId = Int32.Parse(dr["ProductId"].ToString());
                     product.ProductName = dr["ProductName"].ToString();
-                    // product.CatePro = Int32.Parse(dr["CatePro"].ToString());
-                    product.UnitPrice = Convert.ToDecimal(dr["UnitPrice"]);
                     product.Description = dr["Description"].ToString();
-                    CategoryProduct categoryProduct = new CategoryProduct();
+                    product.UnitPrice = Convert.ToDecimal(dr["UnitPrice"]);
+                    product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
+                   CategoryProduct categoryProduct = new CategoryProduct();
                     categoryProduct.CateProName = dr["CateProName"].ToString(); // Ví dụ, giả sử CateProName là tên của danh mục
-
+                   
                     // Gán đối tượng CategoryProduct vào thuộc tính CatePro của Product
                     product.CatePro = categoryProduct;
                     list.Add(product);

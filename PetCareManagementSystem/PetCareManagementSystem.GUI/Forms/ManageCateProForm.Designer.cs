@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ColumnHeader columnHeader2;
             this.lsvProduct = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.treeViewCate = new System.Windows.Forms.TreeView();
             this.NavbarHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NavbarHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvProduct
             // 
             this.lsvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
             this.lsvProduct.FullRowSelect = true;
             this.lsvProduct.HideSelection = false;
             this.lsvProduct.Location = new System.Drawing.Point(384, 184);
@@ -57,29 +56,6 @@
             this.lsvProduct.TabIndex = 7;
             this.lsvProduct.UseCompatibleStateImageBehavior = false;
             this.lsvProduct.SelectedIndexChanged += new System.EventHandler(this.lsvProduct_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID Product";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Tên Sản phẩm";
-            columnHeader2.Width = 80;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Description";
-            this.columnHeader3.Width = 90;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn giá";
-            this.columnHeader4.Width = 90;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Số lượng tồn kho";
             // 
             // treeViewCate
             // 
@@ -114,6 +90,28 @@
             this.label1.Text = "Quản lý Danh mục Sản phẩm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID Product";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Product Name";
+            this.columnHeader7.Width = 110;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Description";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Unit Price";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Quantity In Stock";
+            this.columnHeader10.Width = 90;
+            // 
             // ManageCateProForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,12 +131,13 @@
         #endregion
 
         private System.Windows.Forms.ListView lsvProduct;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.TreeView treeViewCate;
         private Guna.UI2.WinForms.Guna2Panel NavbarHeader;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
