@@ -28,6 +28,7 @@ namespace PetCareManagementSystem.GUI
         private ManageReceiptForm receiptForm;
         private AddProForm addProForm;
         private ManageProForm manageProForm;
+        private ManageCateProForm manageCateProForm;
         #endregion
 
         #region Constructor and Load
@@ -360,6 +361,28 @@ namespace PetCareManagementSystem.GUI
         private void guna2Panel1_MouseLeave(object sender, EventArgs e)
         {
             btnArD.Image = global::PetCareManagementSystem.GUI.Properties.Resources.arrow;
-        }  
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+            if (manageCateProForm == null)
+            {
+                manageCateProForm = new ManageCateProForm();
+                manageCateProForm.FormClosed += ManageCatePro_FormClosed;
+                manageCateProForm.MdiParent = this;
+                manageCateProForm.FormBorderStyle = FormBorderStyle.None;
+                manageCateProForm.Dock = DockStyle.Fill;
+                manageCateProForm.Show();
+            }
+            else
+            {
+                manageCateProForm.Activate();
+            }
+        }
+        private void ManageCatePro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            manageCateProForm = null;
+        }
     }
 }
