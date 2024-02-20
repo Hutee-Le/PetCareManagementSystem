@@ -17,6 +17,7 @@ namespace PetCareManagementSystem.GUI.Forms
         public ManageCateProForm()
         {
             InitializeComponent();
+            lsvProduct.AutoArrange = false;
             cateproBus = new CateProBUS();
             productBus = new ProductBUS();
         }
@@ -77,7 +78,7 @@ namespace PetCareManagementSystem.GUI.Forms
 
             List<Product> prolist = productBus.getAll();
             lsvProduct.View = View.Details;
-            int count = 0;
+          
 
             foreach (Product pro in prolist)
             {
@@ -88,8 +89,10 @@ namespace PetCareManagementSystem.GUI.Forms
                 item.SubItems.Add(pro.Description.ToString());
                 item.SubItems.Add(pro.UnitPrice.ToString());
                 item.SubItems.Add(pro.QuantityInStock.ToString());
+                string p = cateproBus.GetNameCateById(pro.CateProId);
+                item.SubItems.Add(p);
                 lsvProduct.Items.Add(item);
-                count++;
+      
             }
         }
 
