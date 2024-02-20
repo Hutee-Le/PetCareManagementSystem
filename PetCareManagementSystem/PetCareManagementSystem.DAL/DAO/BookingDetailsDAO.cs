@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,17 @@ namespace PetCareManagementSystem.DAL.DAO
             };
 
             return _helper.ExecuteInsertQuery(query, parameters);
+        }
+
+        public bool DeleteBookingDetails(int bookingId)
+        {
+            string query = "DELETE FROM BookingDetails WHERE BookingID = @BookingID";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+            new SqlParameter("@BookingID", SqlDbType.Int) { Value = bookingId }
+            };
+
+            return _helper.ExecuteDeleteQuery(query, parameters);
         }
     }
 }
