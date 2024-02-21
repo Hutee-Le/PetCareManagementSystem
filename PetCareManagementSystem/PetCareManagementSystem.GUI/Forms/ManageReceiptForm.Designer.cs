@@ -60,6 +60,11 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listvReceipt = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NavbarHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmcNumber)).BeginInit();
@@ -77,7 +82,7 @@
             this.NavbarHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.NavbarHeader.Location = new System.Drawing.Point(0, 0);
             this.NavbarHeader.Name = "NavbarHeader";
-            this.NavbarHeader.Size = new System.Drawing.Size(1010, 82);
+            this.NavbarHeader.Size = new System.Drawing.Size(1685, 82);
             this.NavbarHeader.TabIndex = 1;
             // 
             // label1
@@ -109,7 +114,7 @@
             this.groupBox1.Controls.Add(this.cbSup);
             this.groupBox1.Location = new System.Drawing.Point(0, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(960, 301);
+            this.groupBox1.Size = new System.Drawing.Size(886, 301);
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
             // 
@@ -232,6 +237,7 @@
             this.txtUnitPrice.SelectedText = "";
             this.txtUnitPrice.Size = new System.Drawing.Size(232, 39);
             this.txtUnitPrice.TabIndex = 102;
+            this.txtUnitPrice.TextChanged += new System.EventHandler(this.txtUnitPrice_TextChanged);
             // 
             // btnUpdate
             // 
@@ -354,6 +360,11 @@
             // nmcNumber
             // 
             this.nmcNumber.Location = new System.Drawing.Point(500, 158);
+            this.nmcNumber.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nmcNumber.Name = "nmcNumber";
             this.nmcNumber.Size = new System.Drawing.Size(153, 22);
             this.nmcNumber.TabIndex = 89;
@@ -377,7 +388,7 @@
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Location = new System.Drawing.Point(0, 393);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(963, 234);
+            this.groupBox2.Size = new System.Drawing.Size(920, 234);
             this.groupBox2.TabIndex = 91;
             this.groupBox2.TabStop = false;
             // 
@@ -495,11 +506,43 @@
             this.columnHeader21.Text = "ProductID";
             this.columnHeader21.Width = 0;
             // 
+            // listvReceipt
+            // 
+            this.listvReceipt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listvReceipt.HideSelection = false;
+            this.listvReceipt.Location = new System.Drawing.Point(926, 90);
+            this.listvReceipt.Name = "listvReceipt";
+            this.listvReceipt.Size = new System.Drawing.Size(721, 545);
+            this.listvReceipt.TabIndex = 92;
+            this.listvReceipt.UseCompatibleStateImageBehavior = false;
+            this.listvReceipt.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID Receipt";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nhân viên tạo";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tổng tiền hóa đơn";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ngày tạo";
+            // 
             // ManageReceiptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 647);
+            this.ClientSize = new System.Drawing.Size(1685, 647);
+            this.Controls.Add(this.listvReceipt);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.NavbarHeader);
@@ -549,5 +592,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ListView listvReceipt;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

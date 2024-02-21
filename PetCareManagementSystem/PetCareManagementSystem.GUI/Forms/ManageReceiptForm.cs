@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PetCareManagementSystem.GUI.Forms
 {
@@ -123,6 +124,7 @@ namespace PetCareManagementSystem.GUI.Forms
             listView1.View = View.Details;
             listViewPro.View = View.Details;
 
+
             var categories = cateProBus.getAll();
 
 
@@ -149,6 +151,27 @@ namespace PetCareManagementSystem.GUI.Forms
             cbSup.DisplayMember = "SupplierName";
             cbSup.ValueMember = "SupplierID";
             cbSup.SelectedIndex = 0;
+            listvReceipt.View = View.Details;
+            List<Receipt> receipt = receiptBus.getAll();
+            int count = 0;
+
+            foreach (Receipt rec in receipt)
+            {
+                ListViewItem item = new ListViewItem(rec.ReceiptId.ToString());
+                //item.ImageIndex = count;
+                //item.ImageKey = "iconKey";
+
+
+                item.SubItems.Add(rec.EmployeeId.ToString());
+                item.SubItems.Add(rec.TotalAmount.ToString());
+                item.SubItems.Add(rec.ReceiptDate.ToString());
+
+                listvReceipt.Items.Add(item);
+                //  txtClass.Text = node.Tag.ToString();
+
+                count++;
+            }
+
         }
 
         private void btnAddnew_Click(object sender, EventArgs e)
@@ -323,18 +346,31 @@ namespace PetCareManagementSystem.GUI.Forms
                 txtNameProduct.Text = selectedItem.SubItems[0].Text;
                 cbCatePro.Text = selectedItem.SubItems[1].Text;
                 cbSup.Text = selectedItem.SubItems[2].Text;
+                txtUnitPrice.Text = selectedItem.SubItems[3].Text;
+
                 decimal numberValue;
-                if (Decimal.TryParse(selectedItem.SubItems[3].Text, out numberValue))
+                if (Decimal.TryParse(selectedItem.SubItems[4].Text, out numberValue))
                 {
                     nmcNumber.Value = numberValue;
                 }
                 else
                 {
-                    MessageBox.Show("Giá không hợp lệ");
+                    // Handle parsing failure, maybe show an error message or set a default value
                 }
-                txtUnitPrice.Text = selectedItem.SubItems[4].Text;
+
+
                 txtSumPrice.Text = selectedItem.SubItems[5].Text;
             }
+        }
+
+        private void txtUnitPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
