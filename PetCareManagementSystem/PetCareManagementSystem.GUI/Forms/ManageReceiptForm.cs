@@ -314,5 +314,27 @@ namespace PetCareManagementSystem.GUI.Forms
             AddProForm addpro = new AddProForm();
             addpro.ShowDialog();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                txtNameProduct.Text = selectedItem.SubItems[0].Text;
+                cbCatePro.Text = selectedItem.SubItems[1].Text;
+                cbSup.Text = selectedItem.SubItems[2].Text;
+                decimal numberValue;
+                if (Decimal.TryParse(selectedItem.SubItems[3].Text, out numberValue))
+                {
+                    nmcNumber.Value = numberValue;
+                }
+                else
+                {
+                    MessageBox.Show("Giá không hợp lệ");
+                }
+                txtUnitPrice.Text = selectedItem.SubItems[4].Text;
+                txtSumPrice.Text = selectedItem.SubItems[5].Text;
+            }
+        }
     }
 }
