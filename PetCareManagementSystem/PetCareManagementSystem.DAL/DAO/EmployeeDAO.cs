@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,13 @@ namespace PetCareManagementSystem.DAL.DAO
         public DataTable GetAllEmployees()
         {
             string query = "SELECT * FROM Employees";
+            return dataAccessHelper.ExecuteSelectAllQuery(query);
+        }
+
+        public DataTable GetSpaEmployeeDetails()
+        {
+
+            string query = "SELECT * FROM vw_SpaEmployeeDetails ORDER BY EmployeeID DESC";
             return dataAccessHelper.ExecuteSelectAllQuery(query);
         }
 

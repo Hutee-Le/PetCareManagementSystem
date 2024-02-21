@@ -29,6 +29,7 @@ namespace PetCareManagementSystem.GUI
         private AddProForm addProForm;
         private ManageProForm manageProForm;
         private ManageCateProForm manageCateProForm;
+        private ManageSpaEmployeesForm manageSpaEmployeesForm;
         #endregion
 
         #region Constructor and Load
@@ -383,6 +384,28 @@ namespace PetCareManagementSystem.GUI
         private void ManageCatePro_FormClosed(object sender, FormClosedEventArgs e)
         {
             manageCateProForm = null;
+        }
+
+        private void btnSpaEmployee_Click(object sender, EventArgs e)
+        {
+            if(manageSpaEmployeesForm == null)
+            {
+                manageSpaEmployeesForm = new ManageSpaEmployeesForm();
+                manageSpaEmployeesForm.FormClosed += ManageSpaEmployees_FormClosed;
+                manageSpaEmployeesForm.MdiParent = this;
+                manageSpaEmployeesForm.FormBorderStyle = FormBorderStyle.None;
+                manageSpaEmployeesForm.Dock = DockStyle.Fill;
+                manageSpaEmployeesForm.Show();
+            }
+            else
+            {
+                manageSpaEmployeesForm.Activate();
+            }
+        }
+
+        private void ManageSpaEmployees_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            manageSpaEmployeesForm = null;
         }
     }
 }

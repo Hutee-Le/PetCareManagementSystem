@@ -144,6 +144,12 @@
     <Compile Include="Forms\ManageReceiptForm.Designer.cs">
       <DependentUpon>ManageReceiptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageSpaEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageSpaEmployeesForm.Designer.cs">
+      <DependentUpon>ManageSpaEmployeesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SpaBookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageReceiptForm.resx">
       <DependentUpon>ManageReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageSpaEmployeesForm.resx">
+      <DependentUpon>ManageSpaEmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpaBookingForm.resx">
       <DependentUpon>SpaBookingForm.cs</DependentUpon>
@@ -365,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\right-arrow-primary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default-avatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -95,5 +95,10 @@ namespace PetCareManagementSystem.BLL
         {
             return employeeDAO.UpdateEmployeeStatus(employeeId, status);
         }
+
+        public DataTable GetSpaEmployeeDetails()
+        {
+            return employeeDAO.GetSpaEmployeeDetails();
+        }
     }
 }
