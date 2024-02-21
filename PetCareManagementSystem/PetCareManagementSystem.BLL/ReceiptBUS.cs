@@ -215,5 +215,98 @@ namespace PetCareManagementSystem.BLL
                 return "-1";
             }
         }
+        public int countPro1month()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                int insertionSuccess = receiptDAO.countPro1month();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+        public string countReceipt1month()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                string insertionSuccess = receiptDAO.countReceipt1month();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "-1";
+            }
+        }
+
+        public int countProToday()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                int insertionSuccess = receiptDAO.countProToday();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+
+        public int countPro7days()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                int insertionSuccess = receiptDAO.countPro7days();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+        public string countReceipt7days()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                string insertionSuccess = receiptDAO.countReceipt7days();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "-1";
+            }
+        }
+        
+              public string countReceiptToday()
+        {
+            try
+            {
+                // Call AddStudent in the DAO to insert the new student
+                string insertionSuccess = receiptDAO.countReceiptToday();
+
+                return insertionSuccess;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "-1";
+            }
+        }
     }
 }

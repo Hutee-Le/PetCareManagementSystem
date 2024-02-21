@@ -40,9 +40,9 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
-            int countPro = productBus.countPro();
+            int countPro = receiptBUS.countProToday();
             label2.Text = countPro.ToString();
-            string countSumReceipt = receiptBUS.countSumReceipt();
+            string countSumReceipt = receiptBUS.countReceiptToday();
             label3.Text = countSumReceipt.ToString();
             TypeCatechart.DataSource = cateProBUS.getCateName();
 
@@ -104,6 +104,10 @@ namespace PetCareManagementSystem.GUI.Forms
             dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             dtpEndDate.Value = DateTime.Now;
             LoadThismonth();
+            int countPro = receiptBUS.countPro1month();
+            label2.Text = countPro.ToString();
+            string countSumReceipt = receiptBUS.countReceipt1month();
+            label3.Text = countSumReceipt.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,6 +116,10 @@ namespace PetCareManagementSystem.GUI.Forms
             dtpStartDate.Value = DateTime.Today;
             dtpEndDate.Value = DateTime.Now;
             LoadToday();
+            int countPro = receiptBUS.countProToday();
+            label2.Text = countPro.ToString();
+            string countSumReceipt = receiptBUS.countReceiptToday();
+            label3.Text = countSumReceipt.ToString();
         }
 
         private void btn7days_Click(object sender, EventArgs e)
@@ -119,6 +127,10 @@ namespace PetCareManagementSystem.GUI.Forms
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
             Load7days();
+            int countPro = receiptBUS.countPro7days();
+            label2.Text = countPro.ToString();
+            string countSumReceipt = receiptBUS.countReceipt7days();
+            label3.Text = countSumReceipt.ToString();
 
         }
     }

@@ -190,5 +190,132 @@ namespace PetCareManagementSystem.DAL.DAO
             return SumReceipt;
         }
 
+        public int countPro1month()
+        {
+            
+            int productCount = -1; // Initialize latestReceiptID here
+            string query = "SELECT SUM(Quantity) FROM ReceiptDetail rd join Receipt r on rd.ReceiptID= r.ReceiptID WHERE YEAR(r.ReceiptDate) = YEAR(GETDATE()) AND MONTH(r.ReceiptDate) = MONTH(GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    productCount = Convert.ToInt32(dt.Rows[0][0]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return productCount;
+        }
+
+        public int countProToday()
+        {
+
+            int recCount = -1; // Initialize latestReceiptID here
+            string query = "SELECT SUM(Quantity) FROM ReceiptDetail rd join Receipt r on rd.ReceiptID= r.ReceiptID WHERE CONVERT(date, r.ReceiptDate) = CONVERT(date, GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    recCount = Convert.ToInt32(dt.Rows[0][0]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return recCount;
+        }
+
+
+
+        public int countPro7days()
+        {
+
+            int recCount = -1; // Initialize latestReceiptID here
+            string query = "SELECT SUM(Quantity) FROM ReceiptDetail rd join Receipt r on rd.ReceiptID= r.ReceiptID WHERE r.ReceiptDate >= DATEADD(DAY, -7, GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    recCount = Convert.ToInt32(dt.Rows[0][0]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return recCount;
+        }
+
+
+        public string countReceipt1month()
+        {
+            string SumReceipt = ""; // Initialize latestReceiptID here
+            string query = "SELECT SUM([TotalAmount]) FROM Receipt WHERE YEAR(ReceiptDate) = YEAR(GETDATE()) AND MONTH(ReceiptDate) = MONTH(GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    decimal sum = Convert.ToDecimal(dt.Rows[0][0]);
+                    SumReceipt = FormatCurrency(sum);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return SumReceipt;
+        }
+
+        public string countReceipt7days()
+        {
+            string SumReceipt = ""; // Initialize latestReceiptID here
+            string query = "SELECT SUM([TotalAmount]) FROM Receipt WHERE YEAR(ReceiptDate) = YEAR(GETDATE()) AND MONTH(ReceiptDate) = MONTH(GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    decimal sum = Convert.ToDecimal(dt.Rows[0][0]);
+                    SumReceipt = FormatCurrency(sum);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return SumReceipt;
+        }
+        public string countReceiptToday()
+        {
+            string SumReceipt = ""; // Initialize latestReceiptID here
+            string query = "SELECT SUM([TotalAmount]) FROM Receipt WHERE CONVERT(date, ReceiptDate) = CONVERT(date, GETDATE());";
+            try
+            {
+                DataTable dt = dataProvider.ExecuteSelectAllQuery(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // Parse the count from the first row and first column of the DataTable
+                    decimal sum = Convert.ToDecimal(dt.Rows[0][0]);
+                    SumReceipt = FormatCurrency(sum);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return SumReceipt;
+        }
     }
 }
