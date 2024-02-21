@@ -45,12 +45,42 @@ namespace PetCareManagementSystem.BLL
                     BookingID = Convert.ToInt32(row["BookingID"]),
                     RoomID = Convert.ToInt32(row["RoomID"]),
                     EmployeeID = Convert.ToInt32(row["EmployeeID"]),
-                    CustomerName = row["Name"].ToString(),
+                    Name = row["Name"].ToString(),
                     Date = Convert.ToDateTime(row["Date"]),
                     ServiceName = row["ServiceName"].ToString(),
                     TotalPrice = Convert.ToDecimal(row["TotalPrice"]),
-                    EmployeeName = row["EmployeesName"].ToString(),
-                    PetName = row["PetsName"].ToString(),
+                    EmployeesName = row["EmployeesName"].ToString(),
+                    PetsName = row["PetsName"].ToString(),
+                    BreedName = row["BreedName"].ToString(),
+                    SpeciesName = row["SpeciesName"].ToString(),
+                    Status = row["Status"].ToString(),
+                    PaymentStatus = row["PaymentStatus"].ToString(),
+                    TypeName = row["TypeName"].ToString(),
+                });
+            }
+
+            return listBookings;
+        }
+
+        public List<SpaPetBookingDetail> GetSortedSpaPetBookings(string sortBy, string sortDirection)
+        {
+            DataTable dtBookings = _dao.GetSortedSpaPetBookings(sortBy, sortDirection);
+
+            List<SpaPetBookingDetail> listBookings = new List<SpaPetBookingDetail>();
+
+            foreach (DataRow row in dtBookings.Rows)
+            {
+                listBookings.Add(new SpaPetBookingDetail
+                {
+                    BookingID = Convert.ToInt32(row["BookingID"]),
+                    RoomID = Convert.ToInt32(row["RoomID"]),
+                    EmployeeID = Convert.ToInt32(row["EmployeeID"]),
+                    Name = row["Name"].ToString(),
+                    Date = Convert.ToDateTime(row["Date"]),
+                    ServiceName = row["ServiceName"].ToString(),
+                    TotalPrice = Convert.ToDecimal(row["TotalPrice"]),
+                    EmployeesName = row["EmployeesName"].ToString(),
+                    PetsName = row["PetsName"].ToString(),
                     BreedName = row["BreedName"].ToString(),
                     SpeciesName = row["SpeciesName"].ToString(),
                     Status = row["Status"].ToString(),
@@ -71,13 +101,13 @@ namespace PetCareManagementSystem.BLL
         {
             _dao.UpdateBookingStatus(bookingId, status);
 
-            if (status == "Completed" || status == "Cancelled" || status == "Rejected")
+            if (status == "Completed" || status == "Cancelled")
             {
                 roomDAO.UpdateRoomStatus(roomId, "Available");
                 employeeDAO.UpdateEmployeeStatus(employeeId, "Available");
             }
 
-            if (status == "Confirmed" || status == "In Progress")
+            if (status == "Confirmed" || status == "In Progress" || status == "Pending")
             {
                 roomDAO.UpdateRoomStatus(roomId, "Unavailable");
                 employeeDAO.UpdateEmployeeStatus(employeeId, "Busy");

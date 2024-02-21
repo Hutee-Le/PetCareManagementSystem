@@ -31,17 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.inforSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
             this.AddNewSpaBooking = new Guna.UI2.WinForms.Guna2Button();
             this.dgSpaBooking = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.headerSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +59,6 @@
             this.Status = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.PaymentStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.deleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.headerSpa = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.inforSpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSpaBooking)).BeginInit();
@@ -106,8 +107,6 @@
             // 
             this.dgSpaBooking.AllowUserToAddRows = false;
             this.dgSpaBooking.AllowUserToOrderColumns = true;
-            this.dgSpaBooking.AllowUserToResizeColumns = false;
-            this.dgSpaBooking.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgSpaBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgSpaBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -126,7 +125,7 @@
             this.dgSpaBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgSpaBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.CustomerName,
+            this.Name,
             this.Date,
             this.ServiceName,
             this.TotalPrice,
@@ -141,25 +140,25 @@
             this.Status,
             this.PaymentStatus,
             this.deleteItem});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgSpaBooking.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSpaBooking.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgSpaBooking.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgSpaBooking.Location = new System.Drawing.Point(1, 67);
             this.dgSpaBooking.Name = "dgSpaBooking";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgSpaBooking.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSpaBooking.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgSpaBooking.RowHeadersVisible = false;
             this.dgSpaBooking.RowHeadersWidth = 40;
             this.dgSpaBooking.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -190,6 +189,33 @@
             this.dgSpaBooking.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSpaBooking_CellContentClick);
             this.dgSpaBooking.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgSpaBooking_CellPainting);
             this.dgSpaBooking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSpaBooking_CellValueChanged);
+            this.dgSpaBooking.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgSpaBooking_ColumnHeaderMouseClick);
+            // 
+            // headerSpa
+            // 
+            this.headerSpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.headerSpa.Controls.Add(this.label1);
+            this.headerSpa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerSpa.Location = new System.Drawing.Point(0, 0);
+            this.headerSpa.Name = "headerSpa";
+            this.headerSpa.Radius = 5;
+            this.headerSpa.Size = new System.Drawing.Size(1171, 100);
+            this.headerSpa.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(1147, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Đơn Đặt Spa";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ID
             // 
@@ -201,18 +227,20 @@
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ID.Width = 103;
             // 
-            // CustomerName
+            // Name
             // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "Tên Khách Hàng";
-            this.CustomerName.MinimumWidth = 6;
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            this.CustomerName.Width = 150;
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Tên Khách Hàng";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 150;
             // 
             // Date
             // 
             this.Date.DataPropertyName = "Date";
+            dataGridViewCellStyle3.Format = "dd-MM-yyyy";
+            this.Date.DefaultCellStyle = dataGridViewCellStyle3;
             this.Date.HeaderText = "Ngày & Giờ";
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
@@ -239,7 +267,7 @@
             // 
             // EmployeeName
             // 
-            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.DataPropertyName = "EmployeesName";
             this.EmployeeName.HeaderText = "Người tắm rửa";
             this.EmployeeName.MinimumWidth = 6;
             this.EmployeeName.Name = "EmployeeName";
@@ -248,7 +276,7 @@
             // 
             // PetName
             // 
-            this.PetName.DataPropertyName = "PetName";
+            this.PetName.DataPropertyName = "PetsName";
             this.PetName.HeaderText = "Tên thú cưng";
             this.PetName.MinimumWidth = 6;
             this.PetName.Name = "PetName";
@@ -312,36 +340,33 @@
             // Status
             // 
             this.Status.DataPropertyName = "Status";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.4F);
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(4, 11, 4, 11);
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.4F);
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(4, 11, 4, 11);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.DefaultCellStyle = dataGridViewCellStyle4;
             this.Status.DropDownWidth = 2;
             this.Status.FillWeight = 130F;
             this.Status.HeaderText = "Trạng thái";
             this.Status.Items.AddRange(new object[] {
             "Pending",
-            "Confirmed",
-            "Cancelled",
             "In Progress",
             "Completed",
-            "Rejected"});
+            "Cancelled"});
             this.Status.MaxDropDownItems = 16;
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
             this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Status.Width = 130;
             // 
             // PaymentStatus
             // 
             this.PaymentStatus.DataPropertyName = "PaymentStatus";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(4, 11, 4, 11);
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PaymentStatus.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(4, 11, 4, 11);
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PaymentStatus.DefaultCellStyle = dataGridViewCellStyle5;
             this.PaymentStatus.DropDownWidth = 2;
             this.PaymentStatus.HeaderText = "Trạng thái thanh toán";
             this.PaymentStatus.Items.AddRange(new object[] {
@@ -350,50 +375,21 @@
             this.PaymentStatus.MaxDropDownItems = 16;
             this.PaymentStatus.MinimumWidth = 6;
             this.PaymentStatus.Name = "PaymentStatus";
-            this.PaymentStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.PaymentStatus.Width = 150;
             // 
             // deleteItem
             // 
-            this.deleteItem.DataPropertyName = "BookingID";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
-            this.deleteItem.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
+            this.deleteItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.deleteItem.HeaderText = "Hành động";
             this.deleteItem.MinimumWidth = 6;
             this.deleteItem.Name = "deleteItem";
-            this.deleteItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.deleteItem.Text = "🗑️";
             this.deleteItem.ToolTipText = "🗑️";
             this.deleteItem.UseColumnTextForButtonValue = true;
             this.deleteItem.Width = 125;
-            // 
-            // headerSpa
-            // 
-            this.headerSpa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
-            this.headerSpa.Controls.Add(this.label1);
-            this.headerSpa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerSpa.Location = new System.Drawing.Point(0, 0);
-            this.headerSpa.Name = "headerSpa";
-            this.headerSpa.Radius = 5;
-            this.headerSpa.Size = new System.Drawing.Size(1171, 100);
-            this.headerSpa.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(1147, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Đơn Đặt Spa";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SpaBookingForm
             // 
@@ -402,7 +398,6 @@
             this.ClientSize = new System.Drawing.Size(1171, 625);
             this.Controls.Add(this.inforSpa);
             this.Controls.Add(this.headerSpa);
-            this.Name = "SpaBookingForm";
             this.Text = "SpaBookingForm";
             this.Load += new System.EventHandler(this.SpaBookingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -421,7 +416,7 @@
         private Guna.UI2.WinForms.Guna2Button AddNewSpaBooking;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridViewLinkColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;

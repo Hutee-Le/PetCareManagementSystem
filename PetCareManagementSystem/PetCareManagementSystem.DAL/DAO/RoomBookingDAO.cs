@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace PetCareManagementSystem.DAL.DAO
 
         public DataTable GetAllSpaPetBookings()
         {
-            string query = "SELECT * FROM SpaOrderView";
+            string query = "SELECT * FROM SpaOrderView ORDER BY BookingID DESC";
             return dataAccessHelper.ExecuteSelectAllQuery(query);
         }
 
@@ -83,6 +84,13 @@ namespace PetCareManagementSystem.DAL.DAO
            };
 
             return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
+        }
+
+        public DataTable GetSortedSpaPetBookings(string sortBy, string sortDirection)
+        {
+            string query = $"SELECT * FROM SpaOrderView ORDER BY {sortBy} {sortDirection};";
+
+            return dataAccessHelper.ExecuteSelectAllQuery(query);
         }
     }
 }

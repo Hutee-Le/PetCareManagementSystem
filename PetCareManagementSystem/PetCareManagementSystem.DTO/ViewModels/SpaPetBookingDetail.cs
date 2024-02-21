@@ -11,12 +11,12 @@ namespace PetCareManagementSystem.DTO.ViewModels
         public int BookingID { get; set; }
         public int RoomID { get; set; }
         public int EmployeeID { get; set; }
-        public string CustomerName { get; set; }
+        public string Name { get; set; }
         public DateTime Date { get; set; }
         public string ServiceName { get; set; }
         public decimal TotalPrice { get; set; }
-        public string EmployeeName { get; set; }
-        public string PetName { get; set; }
+        public string EmployeesName { get; set; }
+        public string PetsName { get; set; }
         public string BreedName { get; set; }
         public string SpeciesName { get; set; }
         public string Status { get; set; }
