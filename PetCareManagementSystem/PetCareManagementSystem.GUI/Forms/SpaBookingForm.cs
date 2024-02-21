@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace PetCareManagementSystem.GUI.Forms
 {
@@ -100,7 +101,7 @@ namespace PetCareManagementSystem.GUI.Forms
                 }
 
                 // Vẽ cell 'PaymentStatus' nếu 'Status' là "Rejected" hoặc "Cancelled"
-                if (e.ColumnIndex == dgSpaBooking.Columns["PaymentStatus"].Index && (statusValue == "Rejected" || statusValue == "Cancelled"))
+                if (e.ColumnIndex == dgSpaBooking.Columns["PaymentStatus"].Index && statusValue == "Cancelled")
                 {
                     PaintCell(e, "---", e.CellStyle.BackColor, Color.Black, 0);
                 }
@@ -183,5 +184,44 @@ namespace PetCareManagementSystem.GUI.Forms
                 }
             }
         }
+
+        private string currentSortColumn = null;
+        private SortOrder currentSortOrder = SortOrder.None;
+
+        private void dgSpaBooking_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var column = dgSpaBooking.Columns[e.ColumnIndex];
+            // Kiểm tra nếu cột hiện tại không phải là cột được nhấn, reset hướng sắp xếp
+            if (currentSortColumn != column.DataPropertyName)
+            {
+                currentSortOrder = SortOrder.None; // Reset khi thay đổi cột
+            }
+
+            // Đổi chiều hướng sắp xếp
+            currentSortOrder = currentSortOrder == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+
+            // Cập nhật biến theo dõi cột hiện tại
+            currentSortColumn = column.DataPropertyName;
+
+            // Cập nhật SortGlyphDirection cho tất cả các cột
+            foreach (DataGridViewColumn col in dgSpaBooking.Columns)
+            {
+                col.HeaderCell.SortGlyphDirection = SortOrder.None;
+            }
+            column.HeaderCell.SortGlyphDirection = currentSortOrder;
+
+            // Lấy hướng sắp xếp dưới dạng chuỗi
+            string sortDirection = currentSortOrder == SortOrder.Ascending ? "ASC" : "DESC";
+
+            // Tải lại dữ liệu đã sắp xếp
+            LoadSortedData(column.DataPropertyName, sortDirection);
+        }
+
+        private void LoadSortedData(string columnName, string sortDirection)
+        {
+            bindingSource1.DataSource = roomBookingBUS.GetSortedSpaPetBookings(columnName, sortDirection);
+            dgSpaBooking.DataSource = bindingSource1;
+        }
+        
     }
 }
