@@ -20,7 +20,7 @@ namespace PetCareManagementSystem.DAL.DAO
         public DataTable getAll()
         {
             DataTable dt = new DataTable(); // Initialize DataTable here
-            string query = "Select * from Receipt";
+            string query = "SELECT * FROM Receipt ORDER BY ReceiptDate DESC;";
             try
             {
                 dt = dataProvider.ExecuteSelectAllQuery(query);

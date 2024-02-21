@@ -146,7 +146,7 @@ namespace PetCareManagementSystem.BLL
                     product.ProductName = dr["ProductName"].ToString();
                     product.Description = dr["Description"].ToString();
                     product.UnitPrice = Convert.ToDecimal(dr["UnitPrice"]);
-                    product.QuantityInStock = Int32.Parse(dr["QuantityInStock"].ToString());
+                    product.QuantityInStock = (int)Convert.ToInt64(dr["QuantityInStock"].ToString());
                    CategoryProduct categoryProduct = new CategoryProduct();
                     categoryProduct.CateProName = dr["CateProName"].ToString(); // Ví dụ, giả sử CateProName là tên của danh mục
                    
