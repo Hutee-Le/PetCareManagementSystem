@@ -65,6 +65,14 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listVreceiptDetail = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnGetAll = new System.Windows.Forms.Button();
             this.NavbarHeader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmcNumber)).BeginInit();
@@ -513,10 +521,11 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listvReceipt.FullRowSelect = true;
             this.listvReceipt.HideSelection = false;
             this.listvReceipt.Location = new System.Drawing.Point(926, 90);
             this.listvReceipt.Name = "listvReceipt";
-            this.listvReceipt.Size = new System.Drawing.Size(721, 545);
+            this.listvReceipt.Size = new System.Drawing.Size(721, 255);
             this.listvReceipt.TabIndex = 92;
             this.listvReceipt.UseCompatibleStateImageBehavior = false;
             this.listvReceipt.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
@@ -540,11 +549,63 @@
             this.columnHeader4.Text = "Ngày tạo";
             this.columnHeader4.Width = 140;
             // 
+            // listVreceiptDetail
+            // 
+            this.listVreceiptDetail.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader22});
+            this.listVreceiptDetail.HideSelection = false;
+            this.listVreceiptDetail.Location = new System.Drawing.Point(940, 391);
+            this.listVreceiptDetail.Name = "listVreceiptDetail";
+            this.listVreceiptDetail.Size = new System.Drawing.Size(697, 264);
+            this.listVreceiptDetail.TabIndex = 93;
+            this.listVreceiptDetail.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ReceiptDetailID";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Supplier Name";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Product Name";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Quantity";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Đơn giá";
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Total";
+            // 
+            // btnGetAll
+            // 
+            this.btnGetAll.Location = new System.Drawing.Point(926, 352);
+            this.btnGetAll.Name = "btnGetAll";
+            this.btnGetAll.Size = new System.Drawing.Size(75, 23);
+            this.btnGetAll.TabIndex = 94;
+            this.btnGetAll.Text = "Get All";
+            this.btnGetAll.UseVisualStyleBackColor = true;
+            this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);
+            // 
             // ManageReceiptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 647);
+            this.ClientSize = new System.Drawing.Size(1685, 667);
+            this.Controls.Add(this.btnGetAll);
+            this.Controls.Add(this.listVreceiptDetail);
             this.Controls.Add(this.listvReceipt);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -600,5 +661,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ListView listVreceiptDetail;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.Button btnGetAll;
     }
 }

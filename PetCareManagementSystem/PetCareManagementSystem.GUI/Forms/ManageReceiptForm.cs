@@ -24,7 +24,7 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             InitializeComponent();
             cateProBus = new CateProBUS();
-            SupllierBus = new SupplierBUS();
+            SuplierBus = new SupplierBUS();
             receiptBus = new ReceiptBUS();
             receiptDetailBus = new ReceiptDetailBUS();
             productBus = new ProductBUS();
@@ -34,7 +34,7 @@ namespace PetCareManagementSystem.GUI.Forms
 
         private CateProBUS cateProBus;
         private LoginForm _loginForm;
-        private SupplierBUS SupllierBus;
+        private SupplierBUS SuplierBus;
         private ReceiptBUS receiptBus;
         private ReceiptDetailBUS receiptDetailBus;
         private ProductBUS productBus;
@@ -127,7 +127,7 @@ namespace PetCareManagementSystem.GUI.Forms
         {
             listView1.View = View.Details;
             listViewPro.View = View.Details;
-
+            listVreceiptDetail.View = View.Details;
 
             var categories = cateProBus.getAll();
 
@@ -142,7 +142,7 @@ namespace PetCareManagementSystem.GUI.Forms
             cbCatePro.DisplayMember = "CateProName";
             cbCatePro.ValueMember = "CateProId";
 
-            var supplier = SupllierBus.getAll();
+            var supplier = SuplierBus.getAll();
 
             Suppliers suppliers = new Suppliers()
             {
@@ -172,6 +172,24 @@ namespace PetCareManagementSystem.GUI.Forms
                 //  txtClass.Text = node.Tag.ToString();
 
                 count++;
+            }
+            List<ReceiptDetail> receiptdetail = receiptDetailBus.getAll();
+          
+            foreach (ReceiptDetail rec in receiptdetail)
+            {
+                ListViewItem item = new ListViewItem(rec.ReceiptDetailId.ToString());
+
+                string Supname = SuplierBus.GetSupnameByID(rec.SupplierId);
+                item.SubItems.Add(Supname);
+              
+                string Proname = productBus.getProNamebyID(rec.ProductId);
+                item.SubItems.Add(Proname);
+                item.SubItems.Add(rec.Quantity.ToString());
+                item.SubItems.Add(rec.UnitPrice.ToString());
+                item.SubItems.Add(rec.TotalPricePro.ToString());
+                listVreceiptDetail.Items.Add(item);
+                //  txtClass.Text = node.Tag.ToString();
+
             }
 
         }
@@ -373,9 +391,49 @@ namespace PetCareManagementSystem.GUI.Forms
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listvReceipt.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listvReceipt.SelectedItems[0];
+                string selectedText = selectedItem.SubItems[0].Text;
+                if (int.TryParse(selectedText, out int selectedReceipt))
+                {
+                    //ReceiptDetail receiptDetail = receiptDetailBus.GetRecDetailByReceiptId(selectedReceipt);
+                    //ManageRecDetailForm viewredetail = new ManageRecDetailForm(receiptDetail);
+                    //viewredetail.ShowDialog();
+                    listVreceiptDetail.View = View.Details;
+                    listVreceiptDetail.Items.Clear();
+                    List<ReceiptDetail> receiptdetail = receiptDetailBus.GetRecDetailByReceiptId(selectedReceipt);
+                    int count = 0;
+
+                    foreach (ReceiptDetail recd in receiptdetail)
+                    {
+                        ListViewItem item = new ListViewItem(recd.ReceiptDetailId.ToString());
+
+                        //string Employeename = receiptBus.GetEmployeenameByID(recd.EmployeeId);
+                        //item.SubItems.Add(Employeename);
+
+                        item.SubItems.Add(recd.SupplierId.ToString());
+                        item.SubItems.Add(recd.ProductId.ToString());
+                        item.SubItems.Add(recd.Quantity.ToString());
+                        item.SubItems.Add(recd.UnitPrice.ToString());
+                        item.SubItems.Add(recd.TotalPricePro.ToString());
+
+                        listVreceiptDetail.Items.Add(item);
+                     
+                        count++;
+                    }
+
+                }
+
+            }
+        }
+
+        private void listReceiptDetail_Load(object sender, EventArgs e)
+        { 
 
         }
-        private void LoadListViewData()
+
+            private void LoadListViewData()
         {
             listvReceipt.Items.Clear();
             List<Receipt> receipt = receiptBus.getAll();
@@ -397,5 +455,27 @@ namespace PetCareManagementSystem.GUI.Forms
            
         }
 
+        private void btnGetAll_Click(object sender, EventArgs e)
+        {
+            listVreceiptDetail.Items.Clear();
+            List<ReceiptDetail> receiptdetail = receiptDetailBus.getAll();
+
+            foreach (ReceiptDetail rec in receiptdetail)
+            {
+                ListViewItem item = new ListViewItem(rec.ReceiptDetailId.ToString());
+
+                string Supname = SuplierBus.GetSupnameByID(rec.SupplierId);
+                item.SubItems.Add(Supname);
+
+                string Proname = productBus.getProNamebyID(rec.ProductId);
+                item.SubItems.Add(Proname);
+                item.SubItems.Add(rec.Quantity.ToString());
+                item.SubItems.Add(rec.UnitPrice.ToString());
+                item.SubItems.Add(rec.TotalPricePro.ToString());
+                listVreceiptDetail.Items.Add(item);
+                //  txtClass.Text = node.Tag.ToString();
+
+            }
+        }
     }
 }

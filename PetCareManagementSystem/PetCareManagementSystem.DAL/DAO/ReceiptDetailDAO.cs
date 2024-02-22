@@ -16,7 +16,20 @@ namespace PetCareManagementSystem.DAL.DAO
         {
             dataProvider = new SqlDataAccessHelper();
         }
-
+        public DataTable getAll()
+        {
+            DataTable dt = new DataTable(); // Initialize DataTable here
+            string query = "SELECT * FROM Receipt r join ReceiptDetail rd on r.ReceiptID = rd.ReceiptID ORDER BY ReceiptDate DESC;";
+            try
+            {
+                dt = dataProvider.ExecuteSelectAllQuery(query);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return dt;
+        }
         public bool AddReceiptDetail(int ReceiptID, int SupplierID, int ProductID, int Quantity, decimal UnitPrice, decimal TotalPricePro)
         {
             string query = "INSERT INTO ReceiptDetail (ReceiptID,SupplierID, ProductID,  Quantity, UnitPrice, TotalPricePro) VALUES (@ReceiptID,@SupplierID, @ProductID,  @Quantity, @UnitPrice, @TotalPricePro)";
@@ -44,5 +57,25 @@ namespace PetCareManagementSystem.DAL.DAO
                 return false;
             }
         }
+    
+        public List<DataRow> GetRecDetailByReceiptId(int ReceiptId)
+        {
+            List<DataRow> dataRows = new List<DataRow>();
+            string query = "SELECT * FROM ReceiptDetail rd JOIN Receipt r ON r.ReceiptID = rd.ReceiptID WHERE rd.ReceiptID = @ReceiptID ";
+
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@ReceiptID", ReceiptId) };
+                dataRows = dataProvider.ExecuteSelectQuery2(query, parameters);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return dataRows;
+
+        }
+
     }
 }

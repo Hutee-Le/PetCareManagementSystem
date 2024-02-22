@@ -167,7 +167,7 @@ namespace PetCareManagementSystem.DAL.DAO
             return productCount;
         }
 
-   
+
 
         //public bool DeleteProduct(int ProductID)
         //{
@@ -177,5 +177,27 @@ namespace PetCareManagementSystem.DAL.DAO
         //    bool updateSuccess = dataProvider.ExecuteDeleteQuery(query, parameters);
         //    return updateSuccess;
         //}
+        public string getProNamebyID(int proID)
+        {
+            string proName = "NULL"; // Initialize the category name
+            string query = "SELECT ProductName FROM Product WHERE ProductID = @ProductID  ";
+
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@ProductID", proID) };
+                dt = dataProvider.ExecuteSelectQuery(query, parameters);
+                if (dt.Rows.Count > 0)
+                {
+                    // Lấy tên loại sản phẩm từ dòng đầu tiên và cột đầu tiên của DataTable
+                    proName = dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return proName;
+        }
     }
 }

@@ -147,11 +147,7 @@ namespace PetCareManagementSystem.BLL
                     product.Description = dr["Description"].ToString();
                     product.UnitPrice = Convert.ToDecimal(dr["UnitPrice"]);
                     product.QuantityInStock = (int)Convert.ToInt64(dr["QuantityInStock"].ToString());
-                   CategoryProduct categoryProduct = new CategoryProduct();
-                    categoryProduct.CateProName = dr["CateProName"].ToString(); // Ví dụ, giả sử CateProName là tên của danh mục
                    
-                    // Gán đối tượng CategoryProduct vào thuộc tính CatePro của Product
-                    product.CatePro = categoryProduct;
                     list.Add(product);
                 }
             }
@@ -220,6 +216,24 @@ namespace PetCareManagementSystem.BLL
                 Console.WriteLine(e.Message);
                 return false;
             }
+        }
+        public string getProNamebyID(int proID)
+        {
+            string proName = ""; // Initialize the category name
+
+            try
+            {
+                // Gọi phương thức GetNameCateById trong cateproDAO để lấy tên loại sản phẩm
+                proName = productDAO.getProNamebyID(proID);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                // Trong trường hợp xảy ra ngoại lệ, trả về một giá trị đặc biệt để biểu thị sự thất bại
+                return "Error: " + e.Message;
+            }
+
+            return proName;
         }
     }
 }
