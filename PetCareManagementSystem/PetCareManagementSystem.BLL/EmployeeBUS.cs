@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -99,6 +100,21 @@ namespace PetCareManagementSystem.BLL
         public DataTable GetSpaEmployeeDetails()
         {
             return employeeDAO.GetSpaEmployeeDetails();
+        }
+
+        public bool AddEmployee(Employees newEmployee)
+        {
+            return employeeDAO.AddEmployee(newEmployee.Name, newEmployee.Email, newEmployee.Password, newEmployee.PhoneNumber, newEmployee.Status, newEmployee.Address);
+        }
+
+        public int GetLastInsertedId()
+        {
+            return employeeDAO.GetLastInsertedId();
+        }
+
+        public bool EmailExists(string email)
+        {
+            return employeeDAO.EmailExists(email);
         }
     }
 }

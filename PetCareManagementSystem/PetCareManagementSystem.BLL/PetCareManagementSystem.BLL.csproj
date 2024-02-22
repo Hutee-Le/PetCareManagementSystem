@@ -45,11 +45,13 @@
     <Compile Include="CateProBUS.cs" />
     <Compile Include="CustomerBUS.cs" />
     <Compile Include="EmployeeBUS.cs" />
+    <Compile Include="EmployeeRoleBUS.cs" />
     <Compile Include="PetBUS.cs" />
     <Compile Include="ProductBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptBUS.cs" />
     <Compile Include="ReceiptDetailBUS.cs" />
+    <Compile Include="RoleBUS.cs" />
     <Compile Include="RoomBookingBUS.cs" />
     <Compile Include="RoomBUS.cs" />
     <Compile Include="ServiceBUS.cs" />

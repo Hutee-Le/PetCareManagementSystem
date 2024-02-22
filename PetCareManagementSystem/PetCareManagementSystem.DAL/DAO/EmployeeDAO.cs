@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -70,6 +71,43 @@ namespace PetCareManagementSystem.DAL.DAO
             };
 
             return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
+        }
+
+        public bool AddEmployee(string name, string email, string password, string phoneNumber, string status, string address)
+        {
+            string query = "INSERT INTO Employees (Name, Email, Password, PhoneNumber, Status, Address) VALUES (@Name, @Email, @Password, @PhoneNumber, @Status, @Address)";
+
+            SqlParameter[] parameters = new SqlParameter[]
+           {
+                new SqlParameter("@Name", name),
+                new SqlParameter("@Email", email),
+                new SqlParameter("@Password", password),
+                new SqlParameter("@PhoneNumber", phoneNumber),
+                new SqlParameter("@Status", status),
+                new SqlParameter("@Address", address)
+           };
+
+            return dataAccessHelper.ExecuteInsertQuery(query, parameters);
+
+        }
+
+        public int GetLastInsertedId()
+        {
+            string query = "SELECT IDENT_CURRENT('Employees') AS LastID";
+            return dataAccessHelper.ExecuteScalarQuery(query);
+        }
+
+        public bool EmailExists(string email)
+        {
+            string query = "SELECT COUNT(*) FROM Employees WHERE Email = @Email";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Email", email)
+            };
+
+            int count = Convert.ToInt32(dataAccessHelper.ExecuteScalarQuery(query, parameters));
+            return count > 0;
         }
     }
 }
