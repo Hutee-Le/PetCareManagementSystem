@@ -377,37 +377,24 @@ namespace PetCareManagementSystem.GUI.Forms
         }
         private void LoadListViewData()
         {
-            listvReceipt.Items.Clear(); // Xóa dữ liệu cũ
+            listvReceipt.Items.Clear();
+            List<Receipt> receipt = receiptBus.getAll();
+            int count = 0;
 
-            // Thực hiện truy vấn để lấy dữ liệu từ bảng Receipt
-            // và tải dữ liệu vào listView1
-            // Đây là nơi bạn cần thực hiện truy vấn từ cơ sở dữ liệu và tạo các ListViewItem để thêm vào listView1
-            // Ví dụ:
-            string constr = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=petshopsystem_;User ID=petshopsystem_;Password=1;TrustServerCertificate=True";
-           
-            SqlConnection connection = new SqlConnection(constr);
-            SqlCommand command = new SqlCommand("SELECT * FROM Receipt ORDER BY ReceiptDate DESC", connection);
-
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            foreach (Receipt rec in receipt)
             {
-                ListViewItem item = new ListViewItem(reader["ReceiptId"].ToString());
-                int m = Int32.Parse(reader["EmployeeId"].ToString());
-                string Employeename = receiptBus.GetEmployeenameByID(m);
-                item.SubItems.Add(Employeename);
-            
-                item.SubItems.Add(reader["TotalAmount"].ToString());
-                item.SubItems.Add(reader["ReceiptDate"].ToString());
+                ListViewItem item = new ListViewItem(rec.ReceiptId.ToString());
 
-                // Thêm các cột khác tương ứng với dữ liệu bạn muốn hiển thị
+                string Employeename = receiptBus.GetEmployeenameByID(rec.EmployeeId);
+                item.SubItems.Add(Employeename);
+                item.SubItems.Add(rec.TotalAmount.ToString());
+                item.SubItems.Add(rec.ReceiptDate.ToString());
 
                 listvReceipt.Items.Add(item);
+             
+                count++;
             }
-
-            reader.Close();
-            connection.Close();
+           
         }
 
     }
