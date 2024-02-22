@@ -1,14 +1,18 @@
-﻿using PetCareManagementSystem.BLL;
+﻿using Microsoft.Extensions.Configuration;
+using PetCareManagementSystem.BLL;
 using PetCareManagementSystem.DTO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using static Guna.UI2.Native.WinApi;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -158,11 +162,9 @@ namespace PetCareManagementSystem.GUI.Forms
             foreach (Receipt rec in receipt)
             {
                 ListViewItem item = new ListViewItem(rec.ReceiptId.ToString());
-                //item.ImageIndex = count;
-                //item.ImageKey = "iconKey";
-
-
-                item.SubItems.Add(rec.EmployeeId.ToString());
+                
+                string Employeename = receiptBus.GetEmployeenameByID(rec.EmployeeId);
+                item.SubItems.Add(Employeename);
                 item.SubItems.Add(rec.TotalAmount.ToString());
                 item.SubItems.Add(rec.ReceiptDate.ToString());
 
@@ -311,8 +313,9 @@ namespace PetCareManagementSystem.GUI.Forms
 
                         if (saveReceiptDetail)
                         {
-                            MessageBox.Show("Lưu thành công");
+                            MessageBox.Show("Lưu chi tiết phiếu nhập kho thành công");
                             listView1.Items.Clear();
+                            LoadListViewData();
                         }
                         else
                         {
@@ -372,5 +375,40 @@ namespace PetCareManagementSystem.GUI.Forms
         {
 
         }
+        private void LoadListViewData()
+        {
+            listvReceipt.Items.Clear(); // Xóa dữ liệu cũ
+
+            // Thực hiện truy vấn để lấy dữ liệu từ bảng Receipt
+            // và tải dữ liệu vào listView1
+            // Đây là nơi bạn cần thực hiện truy vấn từ cơ sở dữ liệu và tạo các ListViewItem để thêm vào listView1
+            // Ví dụ:
+            string constr = "Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=petshopsystem_;User ID=petshopsystem_;Password=1;TrustServerCertificate=True";
+           
+            SqlConnection connection = new SqlConnection(constr);
+            SqlCommand command = new SqlCommand("SELECT * FROM Receipt ORDER BY ReceiptDate DESC", connection);
+
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["ReceiptId"].ToString());
+                int m = Int32.Parse(reader["EmployeeId"].ToString());
+                string Employeename = receiptBus.GetEmployeenameByID(m);
+                item.SubItems.Add(Employeename);
+            
+                item.SubItems.Add(reader["TotalAmount"].ToString());
+                item.SubItems.Add(reader["ReceiptDate"].ToString());
+
+                // Thêm các cột khác tương ứng với dữ liệu bạn muốn hiển thị
+
+                listvReceipt.Items.Add(item);
+            }
+
+            reader.Close();
+            connection.Close();
+        }
+
     }
 }
