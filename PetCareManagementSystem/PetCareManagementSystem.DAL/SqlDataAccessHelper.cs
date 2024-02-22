@@ -70,7 +70,7 @@ namespace PetCareManagementSystem.DAL
             }
             return dataTable;
         }
-
+      
         /// <summary>
         /// Execute SELECT query with parameters.
         /// </summary>
@@ -127,6 +127,8 @@ namespace PetCareManagementSystem.DAL
             }
             return true;
         }
+
+
         public int ExecuteInsertQuery1(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
