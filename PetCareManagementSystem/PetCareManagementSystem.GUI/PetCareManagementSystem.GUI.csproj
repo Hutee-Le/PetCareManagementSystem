@@ -144,6 +144,12 @@
     <Compile Include="Forms\ManageProForm.Designer.cs">
       <DependentUpon>ManageProForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageRecDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageRecDetailForm.Designer.cs">
+      <DependentUpon>ManageRecDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageReceiptForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProForm.resx">
       <DependentUpon>ManageProForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageRecDetailForm.resx">
+      <DependentUpon>ManageRecDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageReceiptForm.resx">
       <DependentUpon>ManageReceiptForm.cs</DependentUpon>

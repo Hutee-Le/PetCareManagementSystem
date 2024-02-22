@@ -105,6 +105,45 @@ namespace PetCareManagementSystem.DAL
             }
             return dataTable;
         }
+      
+        public List<DataRow> ExecuteSelectQuery2(String _query, SqlParameter[] sqlParameters)
+        {
+            SqlCommand myCommand = new SqlCommand(_query, OpenConnection());
+            DataSet ds = new DataSet();
+            List<DataRow> dataRows = new List<DataRow>();
+
+            try
+            {
+                myCommand.Parameters.AddRange(sqlParameters);
+                myAdapter.SelectCommand = myCommand;
+                myAdapter.Fill(ds);
+
+                // Chuyển DataRowCollection thành một danh sách DataRow
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    dataRows.Add(row);
+                }
+            }
+            catch (SqlException e)
+            {
+                // Log the error
+                Console.Write($"Error - Connection.executeSelectQuery - Query: {_query} \nException: {e.StackTrace}");
+                return null;
+            }
+            finally
+            {
+                // Close the connection in the finally block to ensure it is closed even if an exception occurs.
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return dataRows;
+        }
+
+     
+
 
         public bool ExecuteInsertQuery(String _query, SqlParameter[] sqlParameter)
         {

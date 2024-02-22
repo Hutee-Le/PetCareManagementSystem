@@ -84,13 +84,14 @@ namespace PetCareManagementSystem.GUI.Forms
                     if (saveProduct)
                     {
                         MessageBox.Show("Update sản phẩm thành công");
-                        DialogResult result = MessageBox.Show("Bạn muốn tiếp tục sửa sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        this.Close();
+                        //DialogResult result = MessageBox.Show("Bạn muốn tiếp tục sửa sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        // Nếu người dùng chọn Yes
-                        if (result == DialogResult.No)
-                        {
-                            this.Close();
-                        }
+                        //// Nếu người dùng chọn Yes
+                        //if (result == DialogResult.No)
+                        //{
+                        //    this.Close();
+                        //}
 
                     }
                     else
@@ -118,5 +119,6 @@ namespace PetCareManagementSystem.GUI.Forms
                 this.Close();
             }
         }
+      
     }
 }
