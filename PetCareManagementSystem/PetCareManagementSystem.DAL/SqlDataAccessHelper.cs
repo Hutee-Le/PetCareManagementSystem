@@ -142,9 +142,6 @@ namespace PetCareManagementSystem.DAL
             return dataRows;
         }
 
-     
-
-
         public bool ExecuteInsertQuery(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
@@ -166,7 +163,39 @@ namespace PetCareManagementSystem.DAL
             }
             return true;
         }
+        public int ExecuteScalarQuery(string _query, SqlParameter[] parameters = null)
+        {
+            SqlCommand myCommand = new SqlCommand(_query, OpenConnection());
+            if (parameters != null)
+            {
+                myCommand.Parameters.AddRange(parameters);
+            }
 
+            try
+            {
+                object result = myCommand.ExecuteScalar();
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+                else
+                {
+                    return -1; // hoặc một giá trị phù hợp nếu không có kết quả
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+                return -1; // hoặc mã lỗi phù hợp
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         public int ExecuteInsertQuery1(String _query, SqlParameter[] sqlParameter)
         {
