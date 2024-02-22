@@ -39,6 +39,7 @@ namespace PetCareManagementSystem.BLL
                 {
                     Receipt receipt = new Receipt();
                     receipt.ReceiptId = Int32.Parse(dr["ReceiptId"].ToString());
+                    receipt.EmployeeId = Int32.Parse(dr["EmployeeId"].ToString());
                     receipt.ReceiptDate = DateTime.Parse(dr["ReceiptDate"].ToString());
                     receipt.TotalAmount = Decimal.Parse(dr["TotalAmount"].ToString());
 
@@ -50,6 +51,25 @@ namespace PetCareManagementSystem.BLL
 
             return listReceipt;
         }
+        public string GetEmployeenameByID(int employID)
+        {
+            string employName = ""; // Initialize the category name
+
+            try
+            {
+                // Gọi phương thức GetNameCateById trong cateproDAO để lấy tên loại sản phẩm
+                employName = receiptDAO.GetEmployeenameByID(employID);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                // Trong trường hợp xảy ra ngoại lệ, trả về một giá trị đặc biệt để biểu thị sự thất bại
+                return "Error: " + e.Message;
+            }
+
+            return employName;
+        }
+      
 
         public int AddReceipt(int EmployeeID, DateTime ReceiptDate, decimal TotalAmount)
         {

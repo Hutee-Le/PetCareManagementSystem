@@ -528,14 +528,17 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nhân viên tạo";
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Tổng tiền hóa đơn";
+            this.columnHeader3.Width = 90;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Ngày tạo";
+            this.columnHeader4.Width = 140;
             // 
             // ManageReceiptForm
             // 

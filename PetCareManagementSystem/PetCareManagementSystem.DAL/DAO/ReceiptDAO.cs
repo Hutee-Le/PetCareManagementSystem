@@ -31,6 +31,30 @@ namespace PetCareManagementSystem.DAL.DAO
             }
             return dt;
         }
+
+   
+        public string GetEmployeenameByID(int EmployeeID)
+        {
+            string employName = ""; // Initialize the category name
+            string query = "SELECT Name FROM Receipt r join Employees e on r.EmployeeID= e.EmployeeID WHERE e.EmployeeID = @EmployeeID  ";
+
+            try
+            {
+                SqlParameter[] parameters = { new SqlParameter("@EmployeeID", EmployeeID) };
+                dt = dataProvider.ExecuteSelectQuery(query, parameters);
+                if (dt.Rows.Count > 0)
+                {
+                    // Lấy tên loại sản phẩm từ dòng đầu tiên và cột đầu tiên của DataTable
+                    employName = dt.Rows[0][0].ToString();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return employName;
+        }
         public DataTable GetReceiptAnalisys()
         {
 
