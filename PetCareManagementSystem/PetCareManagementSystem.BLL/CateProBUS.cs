@@ -75,7 +75,7 @@ namespace PetCareManagementSystem.BLL
                     CategoryProduct cate = new CategoryProduct();
                     cate.CateProId = Int32.Parse(dr["Total"].ToString());
                     cate.CateProName = dr["CateProName"].ToString();
-                    cate.Description = dr["Description"].ToString();
+                    //cate.Description = dr["Description"].ToString();
 
 
                     listcate.Add(cate);

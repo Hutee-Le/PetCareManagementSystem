@@ -304,7 +304,7 @@ namespace PetCareManagementSystem.DAL.DAO
         public string countReceipt7days()
         {
             string SumReceipt = ""; // Initialize latestReceiptID here
-            string query = "SELECT SUM([TotalAmount]) FROM Receipt WHERE YEAR(ReceiptDate) = YEAR(GETDATE()) AND MONTH(ReceiptDate) = MONTH(GETDATE());";
+            string query = "SELECT SUM([TotalAmount]) FROM Receipt WHERE ReceiptDate >= DATEADD(DAY, -7, GETDATE());";
             try
             {
                 DataTable dt = dataProvider.ExecuteSelectAllQuery(query);

@@ -348,7 +348,7 @@
             this.LblBaoCao.Name = "LblBaoCao";
             this.LblBaoCao.Size = new System.Drawing.Size(108, 63);
             this.LblBaoCao.TabIndex = 1;
-            this.LblBaoCao.Text = "Báo cáo";
+            this.LblBaoCao.Text = "Receipt";
             this.LblBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblBaoCao.Click += new System.EventHandler(this.LblBaoCao_Click);
             // 
