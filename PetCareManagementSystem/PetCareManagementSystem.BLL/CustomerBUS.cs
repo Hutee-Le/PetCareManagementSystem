@@ -20,7 +20,7 @@ namespace PetCareManagementSystem.BLL
 
         public bool AddCustomer(Customers newCustomer)
         {
-            return _dao.AddCustomer(newCustomer.Name, newCustomer.Email, newCustomer.Address, newCustomer.ImageUrl, newCustomer.Gender, newCustomer.Password, newCustomer.UpdateTime, newCustomer.PhoneNumber);
+            return _dao.AddCustomer(newCustomer.Name, newCustomer.Email, newCustomer.Address, newCustomer.ImageUrl, newCustomer.Gender, newCustomer.Password, newCustomer.UpdateTime, newCustomer.PhoneNumber, newCustomer.CustomerTypeId);
         }
 
         public bool DeleteCustomer(int customerId)

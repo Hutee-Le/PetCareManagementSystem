@@ -16,9 +16,9 @@ namespace PetCareManagementSystem.DAL.DAO
             _helper = new SqlDataAccessHelper();
         }
 
-        public bool AddCustomer(string name, string email, string address, string imageUrl, string gender, string password, DateTime? updateTime, string phoneNumber)
+        public bool AddCustomer(string name, string email, string address, string imageUrl, string gender, string password, DateTime? updateTime, string phoneNumber, int? customerTypeId)
         {
-            string query = "INSERT INTO Customers (Name, Email, Address, ImageUrl, Gender, Password, UpdateTime, PhoneNumber) VALUES (@Name, @Email, @Address, @ImageUrl, @Gender, @Password, @UpdateTime, @PhoneNumber)";
+            string query = "INSERT INTO Customers (Name, Email, Address, ImageUrl, Gender, Password, UpdateTime, PhoneNumber, CustomerTypeID) VALUES (@Name, @Email, @Address, @ImageUrl, @Gender, @Password, @UpdateTime, @PhoneNumber, @CustomerTypeID)";
 
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -29,7 +29,8 @@ namespace PetCareManagementSystem.DAL.DAO
                 new SqlParameter("@Gender", gender),
                 new SqlParameter("@Password", password),
                 new SqlParameter("@UpdateTime", updateTime ?? (object)DBNull.Value),
-                new SqlParameter("@PhoneNumber", phoneNumber)
+                new SqlParameter("@PhoneNumber", phoneNumber),
+                new SqlParameter("@CustomerTypeID", customerTypeId ?? (object)DBNull.Value)
             };
 
             return _helper.ExecuteInsertQuery(query, parameters);

@@ -101,6 +101,7 @@ namespace PetCareManagementSystem.GUI.Forms
             var newCustomer = new Customers
             {
                 Name = txtFirstName.Text + " " + txtLastName.Text,
+                CustomerTypeId = 1,
                 Email = txtEmail.Text,
                 PhoneNumber = txtPhoneNumber.Text,
                 Password = txtPassword.Text,
