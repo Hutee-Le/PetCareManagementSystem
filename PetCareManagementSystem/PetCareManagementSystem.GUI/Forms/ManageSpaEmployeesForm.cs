@@ -99,6 +99,8 @@ namespace PetCareManagementSystem.GUI.Forms
 
         private void dataGridViewSpaEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int employeeId = Convert.ToInt32(dataGridViewSpaEmployees["EmployeeID", e.RowIndex].Value);
+
             if (e.ColumnIndex == dataGridViewSpaEmployees.Columns["Status"].Index && e.RowIndex >= 0)
             {
                 // Đảo trạng thái của toggle
@@ -112,8 +114,50 @@ namespace PetCareManagementSystem.GUI.Forms
                 dataGridViewSpaEmployees.InvalidateCell(e.ColumnIndex, e.RowIndex);
 
                 // Cập nhật trạng thái vào cơ sở dữ liệu
-                int employeeId = Convert.ToInt32(dataGridViewSpaEmployees["EmployeeID", e.RowIndex].Value);
                 UpdateEmployeeStatus(employeeId, newValue);
+            }
+
+            if(e.ColumnIndex == dataGridViewSpaEmployees.Columns["ChangePassword"].Index && e.RowIndex >= 0)
+            {
+                ChangeEmployeePassword(employeeId);
+            }
+
+            if (e.ColumnIndex == dataGridViewSpaEmployees.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                DeleteEmployee(employeeId);
+            }
+        }
+
+        private void ChangePassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadSpaEmployeeData();
+        }
+
+        private void ChangeEmployeePassword(int employeeId)
+        {
+            ChangePasswordForm changePasswordForm = new ChangePasswordForm(employeeId);
+            changePasswordForm.FormClosed += ChangePassword_FormClosed;
+            changePasswordForm.MdiParent = this.MdiParent;
+            changePasswordForm.FormBorderStyle = FormBorderStyle.None;
+            changePasswordForm.Dock = DockStyle.Right;
+            changePasswordForm.Show();
+        }
+
+        private void DeleteEmployee(int employeeId)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result == DialogResult.Yes)
+            {
+                if (employeeBUS.DeleteEmployee(employeeId))
+                {
+                    MessageBox.Show("Nhân viên đã được xóa thành công.");
+                    LoadSpaEmployeeData();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi xóa nhân viên.");
+                }
             }
         }
 

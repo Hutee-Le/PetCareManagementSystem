@@ -16,6 +16,12 @@ namespace PetCareManagementSystem.BLL
         {
             _dao = new PetDAO();
         }
+
+        public bool AddNewPet(Pets newPet)
+        {
+            return _dao.AddPet(newPet.CustomerId, newPet.Name, newPet.BreedId, newPet.BirthDate, newPet.Age, newPet.Gender);
+        }
+   
         public List<Pets> GetPetsByCustomerId(int customerId)
         {
             DataTable dtPets = _dao.GetPetsByCustomerId(customerId);

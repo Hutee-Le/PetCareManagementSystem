@@ -84,6 +84,18 @@
     <Compile Include="CustomControls\RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\AddNewCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewCustomerForm.Designer.cs">
+      <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewPetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewPetForm.Designer.cs">
+      <DependentUpon>AddNewPetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddSpaEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\BookingManagementForm.Designer.cs">
       <DependentUpon>BookingManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChartReceiptForm.cs">
       <SubType>Form</SubType>
@@ -137,6 +155,12 @@
     </Compile>
     <Compile Include="Forms\ManageCateProForm.Designer.cs">
       <DependentUpon>ManageCateProForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageCustomPetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageCustomPetForm.Designer.cs">
+      <DependentUpon>ManageCustomPetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageProForm.cs">
       <SubType>Form</SubType>
@@ -182,6 +206,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddNewCustomerForm.resx">
+      <DependentUpon>AddNewCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewPetForm.resx">
+      <DependentUpon>AddNewPetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSpaEmployeeForm.resx">
       <DependentUpon>AddSpaEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookingManagementForm.resx">
       <DependentUpon>BookingManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChartReceiptForm.resx">
       <DependentUpon>ChartReceiptForm.cs</DependentUpon>
@@ -208,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageCateProForm.resx">
       <DependentUpon>ManageCateProForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageCustomPetForm.resx">
+      <DependentUpon>ManageCustomPetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageProForm.resx">
       <DependentUpon>ManageProForm.cs</DependentUpon>
