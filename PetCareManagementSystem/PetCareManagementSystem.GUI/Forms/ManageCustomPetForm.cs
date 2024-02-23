@@ -1,4 +1,5 @@
 ﻿using PetCareManagementSystem.BLL;
+using PetCareManagementSystem.DTO.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace PetCareManagementSystem.GUI.Forms
     public partial class ManageCustomPetForm : Form
     {
         public readonly CustomerBUS customerBUS;
+        public readonly PetBUS petBUS;
         public ManageCustomPetForm()
         {
             InitializeComponent();
             customerBUS = new CustomerBUS();
+            petBUS = new PetBUS();
         }
 
         private void ManageCustomPetForm_Load(object sender, EventArgs e)
@@ -74,6 +77,34 @@ namespace PetCareManagementSystem.GUI.Forms
                 addNewPet.FormBorderStyle = FormBorderStyle.None;
                 addNewPet.Dock = DockStyle.Right;
                 addNewPet.Show();
+            }
+
+            if (e.ColumnIndex == dataGridViewCustomerPet.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    bool successDeletePets = petBUS.DeletePetByCustomerId(customerId);
+
+                    if (successDeletePets)
+                    {
+                        bool successDeleteCustomer = customerBUS.DeleteCustomer(customerId);
+
+                        if (successDeleteCustomer)
+                        {
+                            MessageBox.Show("Xóa khách hàng và thú cưng thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadCustomers(); // Tải lại danh sách khách hàng
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã xảy ra lỗi khi xóa khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi khi xóa thú cưng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 

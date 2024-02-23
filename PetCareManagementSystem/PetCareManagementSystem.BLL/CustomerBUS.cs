@@ -23,6 +23,11 @@ namespace PetCareManagementSystem.BLL
             return _dao.AddCustomer(newCustomer.Name, newCustomer.Email, newCustomer.Address, newCustomer.ImageUrl, newCustomer.Gender, newCustomer.Password, newCustomer.UpdateTime, newCustomer.PhoneNumber);
         }
 
+        public bool DeleteCustomer(int customerId)
+        {
+            return _dao.DeleteCustomer(customerId);
+        }
+
         public bool EmailExists(string email)
         {
             return _dao.EmailExists(email);
