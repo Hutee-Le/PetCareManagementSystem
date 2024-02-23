@@ -43,7 +43,6 @@ namespace PetCareManagementSystem.BLL
                 Customers customer = new Customers
                 {
                     CustomerId = Convert.ToInt32(dr["CustomerID"]),
-                    CustomerTypeId = Convert.ToInt32(dr["CustomerTypeID"]),
                     Name = dr["Name"].ToString(),
                     Email = dr["Email"].ToString(),
                     Password = dr["Password"].ToString(),
@@ -51,8 +50,17 @@ namespace PetCareManagementSystem.BLL
                     Gender = dr["Gender"].ToString(),
                     Address = dr["Address"].ToString(),
                     UpdateTime = Convert.ToDateTime(dr["UpdateTime"]),
-                    PhoneNumber = dr["PhoneNumber"].ToString()
+                    PhoneNumber = dr["PhoneNumber"].ToString(),
+
                 };
+                if (dr["CustomerTypeID"] != DBNull.Value)
+                {
+                    customer.CustomerTypeId = Convert.ToInt32(dr["CustomerTypeID"]);
+                }
+                else
+                {
+                    customer.CustomerTypeId = null; 
+                }
                 customers.Add(customer);
             }
             return customers;
