@@ -36,6 +36,16 @@ namespace PetCareManagementSystem.DAL.DAO
            
         }
 
+        public bool DeleteCustomer(int customerId)
+        {
+            string query = "DELETE FROM Customers WHERE CustomerID = @CustomerId";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@CustomerId", SqlDbType.Int) { Value = customerId }
+            };
+            return _helper.ExecuteDeleteQuery(query, parameters);
+        }
+
         public bool EmailExists(string email)
         {
             string query = "SELECT COUNT(*) FROM Customers WHERE Email = @Email'";

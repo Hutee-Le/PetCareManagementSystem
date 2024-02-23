@@ -31,6 +31,16 @@ namespace PetCareManagementSystem.DAL.DAO
             return _helper.ExecuteInsertQuery(query, parameters);
         }
 
+        public bool DeletePetByCustomerId(int customerId)
+        {
+            string query = "DELETE FROM Pets WHERE CustomerID = @CustomerId";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@CustomerId", SqlDbType.Int) { Value = customerId }
+            };
+            return _helper.ExecuteInsertQuery(query, parameters);
+        }
+
         public DataTable GetPetsByCustomerId(int customerId)
         {
             string query = @"
