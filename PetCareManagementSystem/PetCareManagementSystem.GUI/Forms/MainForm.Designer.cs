@@ -62,6 +62,8 @@
             this.BtnManageReceipt = new Guna.UI2.WinForms.Guna2Button();
             this.ManagePro = new Guna.UI2.WinForms.Guna2Button();
             this.timerbtnRec = new System.Windows.Forms.Timer(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCustomerPet = new Guna.UI2.WinForms.Guna2Button();
             this.HeaderRightPanel.SuspendLayout();
             this.DashboardPanel.SuspendLayout();
             this.BookingServicePanel.SuspendLayout();
@@ -72,6 +74,7 @@
             this.SideMenuPanel.SuspendLayout();
             this.GroomingPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderRightPanel
@@ -329,6 +332,7 @@
             // SideMenuPanel
             // 
             this.SideMenuPanel.BackColor = System.Drawing.Color.White;
+            this.SideMenuPanel.Controls.Add(this.guna2Panel2);
             this.SideMenuPanel.Controls.Add(this.GroomingPanel);
             this.SideMenuPanel.Controls.Add(this.guna2Panel1);
             this.SideMenuPanel.Controls.Add(this.UserStatusPanel);
@@ -352,7 +356,7 @@
             this.GroomingPanel.Controls.Add(this.btnSpaOrder);
             this.GroomingPanel.Controls.Add(this.btnGrooming);
             this.GroomingPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GroomingPanel.Location = new System.Drawing.Point(0, 110);
+            this.GroomingPanel.Location = new System.Drawing.Point(0, 165);
             this.GroomingPanel.MaximumSize = new System.Drawing.Size(286, 275);
             this.GroomingPanel.MinimumSize = new System.Drawing.Size(286, 55);
             this.GroomingPanel.Name = "GroomingPanel";
@@ -529,9 +533,12 @@
             this.guna2Panel1.Controls.Add(this.btnArD);
             this.guna2Panel1.Controls.Add(this.BtnManageReceipt);
             this.guna2Panel1.Controls.Add(this.ManagePro);
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 177);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 110);
+            this.guna2Panel1.MaximumSize = new System.Drawing.Size(286, 195);
+            this.guna2Panel1.MinimumSize = new System.Drawing.Size(286, 55);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(268, 68);
+            this.guna2Panel1.Size = new System.Drawing.Size(286, 55);
             this.guna2Panel1.TabIndex = 10;
             this.guna2Panel1.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
             this.guna2Panel1.MouseHover += new System.EventHandler(this.guna2Panel1_MouseHover);
@@ -558,7 +565,7 @@
             this.guna2Button1.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(25, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(-3, 175);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 146);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.guna2Button1.Size = new System.Drawing.Size(271, 46);
@@ -588,7 +595,7 @@
             this.BtnManRec.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
             this.BtnManRec.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnManRec.ImageOffset = new System.Drawing.Point(25, 0);
-            this.BtnManRec.Location = new System.Drawing.Point(3, 71);
+            this.BtnManRec.Location = new System.Drawing.Point(0, 55);
             this.BtnManRec.Name = "BtnManRec";
             this.BtnManRec.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.BtnManRec.Size = new System.Drawing.Size(271, 46);
@@ -605,14 +612,14 @@
             this.btnArD.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnArD.ImageRotate = 0F;
             this.btnArD.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnArD.Location = new System.Drawing.Point(234, 24);
+            this.btnArD.Location = new System.Drawing.Point(231, 18);
             this.btnArD.Name = "btnArD";
             this.btnArD.Size = new System.Drawing.Size(25, 20);
             this.btnArD.TabIndex = 10;
             // 
             // BtnManageReceipt
             // 
-            this.BtnManageReceipt.BackColor = System.Drawing.Color.Transparent;
+            this.BtnManageReceipt.BackColor = System.Drawing.Color.White;
             this.BtnManageReceipt.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
             this.BtnManageReceipt.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnManageReceipt.CheckedState.ForeColor = System.Drawing.Color.White;
@@ -633,7 +640,7 @@
             this.BtnManageReceipt.Image = global::PetCareManagementSystem.GUI.Properties.Resources.hair_clipper;
             this.BtnManageReceipt.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnManageReceipt.ImageOffset = new System.Drawing.Point(10, 0);
-            this.BtnManageReceipt.Location = new System.Drawing.Point(0, 10);
+            this.BtnManageReceipt.Location = new System.Drawing.Point(0, 0);
             this.BtnManageReceipt.Name = "BtnManageReceipt";
             this.BtnManageReceipt.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnManageReceipt.Size = new System.Drawing.Size(271, 55);
@@ -663,7 +670,7 @@
             this.ManagePro.Image = global::PetCareManagementSystem.GUI.Properties.Resources.settings_sliders;
             this.ManagePro.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ManagePro.ImageOffset = new System.Drawing.Point(25, 0);
-            this.ManagePro.Location = new System.Drawing.Point(0, 123);
+            this.ManagePro.Location = new System.Drawing.Point(0, 101);
             this.ManagePro.Name = "ManagePro";
             this.ManagePro.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.ManagePro.Size = new System.Drawing.Size(271, 46);
@@ -674,6 +681,45 @@
             // timerbtnRec
             // 
             this.timerbtnRec.Tick += new System.EventHandler(this.timerbtnRec_Tick);
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btnCustomerPet);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 228);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(286, 55);
+            this.guna2Panel2.TabIndex = 7;
+            // 
+            // btnCustomerPet
+            // 
+            this.btnCustomerPet.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnCustomerPet.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerPet.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerPet.CheckedState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.calendar_white;
+            this.btnCustomerPet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomerPet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomerPet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomerPet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCustomerPet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCustomerPet.FillColor = System.Drawing.Color.White;
+            this.btnCustomerPet.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerPet.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomerPet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnCustomerPet.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(253)))));
+            this.btnCustomerPet.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerPet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(93)))), ((int)(((byte)(238)))));
+            this.btnCustomerPet.HoverState.Image = global::PetCareManagementSystem.GUI.Properties.Resources.calendar_primary;
+            this.btnCustomerPet.Image = global::PetCareManagementSystem.GUI.Properties.Resources.calendar;
+            this.btnCustomerPet.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomerPet.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnCustomerPet.Location = new System.Drawing.Point(0, 0);
+            this.btnCustomerPet.Name = "btnCustomerPet";
+            this.btnCustomerPet.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCustomerPet.Size = new System.Drawing.Size(271, 55);
+            this.btnCustomerPet.TabIndex = 2;
+            this.btnCustomerPet.Text = "Chủ Nhân - Thú Cưng";
+            this.btnCustomerPet.Click += new System.EventHandler(this.btnCustomerPet_Click);
             // 
             // MainForm
             // 
@@ -700,6 +746,7 @@
             this.SideMenuPanel.ResumeLayout(false);
             this.GroomingPanel.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -737,5 +784,7 @@
         private Guna.UI2.WinForms.Guna2Button btnGrooming;
         private Guna.UI2.WinForms.Guna2Button BtnManRec;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnCustomerPet;
     }
 }

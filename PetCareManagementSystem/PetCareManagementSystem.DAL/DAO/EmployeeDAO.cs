@@ -109,5 +109,28 @@ namespace PetCareManagementSystem.DAL.DAO
             int count = Convert.ToInt32(dataAccessHelper.ExecuteScalarQuery(query, parameters));
             return count > 0;
         }
+
+        public bool ChangePassword(int employeeId, string newPassword)
+        {
+            string query = "UPDATE Employees SET Password = @Password WHERE EmployeeID = @EmployeeId";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@EmployeeId", employeeId),
+                new SqlParameter("@Password", newPassword)
+            };
+
+            return dataAccessHelper.ExecuteUpdateQuery(query, parameters);
+        }
+
+        public bool DeleteEmployee(int employeeId)
+        {
+            string query = "DELETE FROM Employees WHERE EmployeeID = @EmployeeId";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@EmployeeId", employeeId) 
+            };
+
+            return dataAccessHelper.ExecuteDeleteQuery(query, parameters);
+        }
     }
 }

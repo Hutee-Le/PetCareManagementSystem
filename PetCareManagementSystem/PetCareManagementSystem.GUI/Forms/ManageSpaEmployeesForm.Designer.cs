@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.myImageList = new System.Windows.Forms.ImageList(this.components);
             this.pnListSpaEmployee = new PetCareManagementSystem.GUI.CustomControls.RoundedPanel();
             this.dataGridViewSpaEmployees = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -48,6 +49,7 @@
             this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ChangePassword = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnListSpaEmployee.SuspendLayout();
@@ -103,16 +105,17 @@
             this.RoleName,
             this.Address,
             this.Status,
+            this.ChangePassword,
             this.Update,
             this.Delete});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSpaEmployees.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSpaEmployees.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewSpaEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewSpaEmployees.Location = new System.Drawing.Point(0, 74);
             this.dataGridViewSpaEmployees.Name = "dataGridViewSpaEmployees";
@@ -189,7 +192,7 @@
             this.lblTitleHeader.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTitleHeader.Size = new System.Drawing.Size(1147, 38);
             this.lblTitleHeader.TabIndex = 1;
-            this.lblTitleHeader.Text = "Nhân viên Spa";
+            this.lblTitleHeader.Text = "Danh sách nhân viên";
             this.lblTitleHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // EmployeeID
@@ -261,14 +264,28 @@
             this.Status.TrueValue = "Available";
             this.Status.Width = 125;
             // 
-            // Update
+            // ChangePassword
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(25, 10, 25, 10);
-            this.Update.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Update.HeaderText = "Hành động";
-            this.Update.MinimumWidth = 6;
+            this.ChangePassword.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ChangePassword.HeaderText = "Hành động";
+            this.ChangePassword.MinimumWidth = 4;
+            this.ChangePassword.Name = "ChangePassword";
+            this.ChangePassword.Text = "🔒";
+            this.ChangePassword.ToolTipText = "🔒";
+            this.ChangePassword.UseColumnTextForButtonValue = true;
+            this.ChangePassword.Width = 125;
+            // 
+            // Update
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(25, 10, 25, 10);
+            this.Update.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Update.HeaderText = "";
+            this.Update.MinimumWidth = 4;
             this.Update.Name = "Update";
             this.Update.Text = "✍️";
             this.Update.ToolTipText = "✍️";
@@ -277,12 +294,12 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(25, 10, 25, 10);
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(25, 10, 25, 10);
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle5;
             this.Delete.HeaderText = "";
-            this.Delete.MinimumWidth = 6;
+            this.Delete.MinimumWidth = 4;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -323,6 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.DataGridViewButtonColumn ChangePassword;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }

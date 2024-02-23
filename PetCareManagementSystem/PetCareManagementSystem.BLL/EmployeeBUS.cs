@@ -13,10 +13,12 @@ namespace PetCareManagementSystem.BLL
     public class EmployeeBUS
     {
         private EmployeeDAO employeeDAO;
+        private EmployeeRoleDAO employeeRoleDAO;
 
         public EmployeeBUS()
         {
             employeeDAO = new EmployeeDAO();
+            employeeRoleDAO = new EmployeeRoleDAO();
         }
 
         public List<Employees> GetAllEmployees()
@@ -115,6 +117,23 @@ namespace PetCareManagementSystem.BLL
         public bool EmailExists(string email)
         {
             return employeeDAO.EmailExists(email);
+        }
+
+        public bool ChangePassword(int employeeId, string newPassword)
+        {
+            return employeeDAO.ChangePassword(employeeId, newPassword);
+        }
+
+        public bool DeleteEmployee(int employeeId)
+        {
+            if (employeeRoleDAO.DeleteEmployeeRolesByEmployeeId(employeeId))
+            {
+                 return employeeDAO.DeleteEmployee(employeeId);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

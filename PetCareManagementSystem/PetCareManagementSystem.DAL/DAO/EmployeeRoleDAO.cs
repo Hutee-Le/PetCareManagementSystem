@@ -19,14 +19,25 @@ namespace PetCareManagementSystem.DAL.DAO
 
         public bool AddEmployeeAndRole(int? employeeID, int? roleID)
         {
-            string sql = "INSERT INTO EmployeeRoles (EmployeeID, RoleID) VALUES (@EmployeeId, @RoleId)";
+            string query = "INSERT INTO EmployeeRoles (EmployeeID, RoleID) VALUES (@EmployeeId, @RoleId)";
             SqlParameter[] parameters = new SqlParameter[]
            {
                 new SqlParameter("@EmployeeId", employeeID),
                 new SqlParameter("@RoleId", roleID),
            };
 
-           return sqlDataAccessHelper.ExecuteInsertQuery(sql, parameters);
+           return sqlDataAccessHelper.ExecuteInsertQuery(query, parameters);
+        }
+
+        public bool DeleteEmployeeRolesByEmployeeId(int employeeId)
+        {
+            string query = @"DELETE FROM EmployeeRoles WHERE EmployeeID = @EmployeeId";
+            SqlParameter[] parameters = new SqlParameter[]
+           {
+                new SqlParameter("@EmployeeId", employeeId),
+           };
+
+            return sqlDataAccessHelper.ExecuteDeleteQuery(query, parameters);
         }
     }
 }

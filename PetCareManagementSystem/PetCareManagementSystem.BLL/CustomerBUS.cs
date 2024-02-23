@@ -18,6 +18,16 @@ namespace PetCareManagementSystem.BLL
             _dao = new CustomerDAO();
         }
 
+        public bool AddCustomer(Customers newCustomer)
+        {
+            return _dao.AddCustomer(newCustomer.Name, newCustomer.Email, newCustomer.Address, newCustomer.ImageUrl, newCustomer.Gender, newCustomer.Password, newCustomer.UpdateTime, newCustomer.PhoneNumber);
+        }
+
+        public bool EmailExists(string email)
+        {
+            return _dao.EmailExists(email);
+        }
+
         public List<Customers> GetAll()
         {
             DataTable dtCustomers = _dao.GetAll();
@@ -41,6 +51,11 @@ namespace PetCareManagementSystem.BLL
                 customers.Add(customer);
             }
             return customers;
+        }
+
+        public DataTable GetCustomPetDetails()
+        {
+            return _dao.GetCustomPetDetails();
         }
     }
 }
